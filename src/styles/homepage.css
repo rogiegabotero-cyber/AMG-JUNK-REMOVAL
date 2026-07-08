@@ -370,13 +370,11 @@ a {
   border-radius: 10px;
   padding: 0px 12px;
   font-weight: 600;
-  box-shadow: 0 15px 30px rgba(47, 214, 224, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button-call:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 36px rgba(47, 214, 224, 0.32);
 }
 
 .button-text {
