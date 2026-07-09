@@ -114,15 +114,14 @@ function ContactForm({ c }) {
   )
 }
 
-function FaqItem({ question, answer }) {
-  const [open, setOpen] = useState(false)
+function FaqItem({ question, answer, open, onToggle }) {
   return (
     <div className={`faq-item${open ? ' faq-item--open' : ''}`}>
-      <button className="faq-question" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+      <button className="faq-question" onClick={onToggle} aria-expanded={open}>
         <span>{question}</span>
         <ChevronDownIcon />
       </button>
-      <div className="faq-answer" hidden={!open}>{answer}</div>
+      <div className="faq-answer"><span>{answer}</span></div>
     </div>
   )
 }
@@ -137,9 +136,34 @@ function App() {
   })
 
   useEffect(() => {
+    let observer
+    const raf = requestAnimationFrame(() => {
+      const els = document.querySelectorAll('.reveal:not(.is-visible)')
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0, rootMargin: '0px 0px -40px 0px' }
+      )
+      els.forEach((el) => observer.observe(el))
+    })
+    return () => {
+      cancelAnimationFrame(raf)
+      if (observer) observer.disconnect()
+    }
+  }, [languageCode])
+
+  useEffect(() => {
     window.localStorage.setItem('proline-language', languageCode)
     document.documentElement.lang = languageCode
   }, [languageCode])
+
+  const [openFaqIndex, setOpenFaqIndex] = useState(null)
 
   const content = contentByLanguage[languageCode] ?? contentByLanguage.en
   const { header, hero, sections, footer } = content
@@ -213,21 +237,23 @@ function App() {
         </section>
 
         <section className="section" id="services">
-          <SectionHeading
-            tag={sections.services.tag}
-            title={
-              <>
-                <span className="tight-title-line">{sections.services.titleLines[0]}</span>
-                <span className="tight-title-line">{sections.services.titleLines[1]}</span>
-              </>
-            }
-            description={sections.services.description}
-          />
+          <div className="reveal">
+            <SectionHeading
+              tag={sections.services.tag}
+              title={
+                <>
+                  <span className="tight-title-line">{sections.services.titleLines[0]}</span>
+                  <span className="tight-title-line">{sections.services.titleLines[1]}</span>
+                </>
+              }
+              description={sections.services.description}
+            />
+          </div>
           <div className="service-grid">
             {sections.services.items.map((service) => {
               const Icon = serviceIcons[service.icon]
               return (
-                <article className={service.accent} key={service.title}>
+                <article className={`${service.accent} reveal`} key={service.title}>
                   <span className="service-icon">
                     <Icon />
                   </span>
@@ -255,16 +281,18 @@ function App() {
         </section>
 
         <section className="section" id="work">
-          <SectionHeading
-            tag={sections.work.tag}
-            description={sections.work.description}
-          />
+          <div className="reveal">
+            <SectionHeading
+              tag={sections.work.tag}
+              description={sections.work.description}
+            />
+          </div>
           <div className="work-grid">
             {sections.work.items.map((item) => (
               <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
             ))}
           </div>
-          <div className="work-cta">
+          <div className="work-cta reveal">
             <a className="button-call" href="#contact">
               <PhoneIcon /> {sections.work.cta}
             </a>
@@ -272,14 +300,16 @@ function App() {
         </section>
 
         <section className="section" id="how-it-works">
-          <SectionHeading
-            tag={sections.steps.tag}
-            title={sections.steps.title}
-            description={sections.steps.description}
-          />
+          <div className="reveal">
+            <SectionHeading
+              tag={sections.steps.tag}
+              title={sections.steps.title}
+              description={sections.steps.description}
+            />
+          </div>
           <div className="steps-grid">
             {sections.steps.items.map((step, index) => (
-              <article className="step-card" key={step.number}>
+              <article className="step-card reveal" key={step.number}>
                 <span className="step-number">{step.number}</span>
                 <h3>
                   {step.title}
@@ -324,16 +354,18 @@ function App() {
         </section>
 
         <section className="section" id="why-us">
-          <SectionHeading
-            tag={sections.features.tag}
-            title={sections.features.title}
-            description={sections.features.description}
-          />
+          <div className="reveal">
+            <SectionHeading
+              tag={sections.features.tag}
+              title={sections.features.title}
+              description={sections.features.description}
+            />
+          </div>
           <div className="features-grid">
             {sections.features.items.map((feature) => {
               const Icon = featureIcons[feature.icon]
               return (
-                <article className="feature-card" key={feature.title}>
+                <article className="feature-card reveal" key={feature.title}>
                   {Icon ? (
                     <span className="feature-icon">
                       <Icon />
@@ -348,7 +380,7 @@ function App() {
 
           {sections.features.truckPanel ? (
             <>
-              <div className="truck-panel">
+              <div className="truck-panel reveal">
                 <div className="truck-panel-photo">
                   <img src={truckImg} alt="Proline king-size truck" width="600" height="400" loading="lazy" />
                 </div>
@@ -366,7 +398,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="trust-badges">
+              <div className="trust-badges reveal">
                 {sections.features.truckPanel.trust.map((badge) => {
                   const Icon = badge.title === 'Neighborly Certified' ? TrustBadgeIcon : trustIcons[badge.icon]
                   return (
@@ -385,12 +417,14 @@ function App() {
         </section>
 
         <section className="section" id="areas">
-          <SectionHeading
-            tag={sections.areas.tag}
-            title={sections.areas.title}
-            description={sections.areas.description}
-          />
-          <div className="areas-body">
+          <div className="reveal">
+            <SectionHeading
+              tag={sections.areas.tag}
+              title={sections.areas.title}
+              description={sections.areas.description}
+            />
+          </div>
+          <div className="areas-body reveal reveal-delay-1">
             <div className="areas-location-card">
               <div className="areas-pin-graphic" aria-hidden="true">
                 <svg viewBox="0 0 80 80" fill="none" width="80" height="80" aria-hidden="true">
@@ -428,7 +462,7 @@ function App() {
         </section>
 
         <section className="section" id="faq">
-          <div className="faq-layout">
+          <div className="faq-layout reveal">
             <div className="faq-sidebar">
               <span className="section-tag">{sections.faq.tag}</span>
               <h2>{sections.faq.title}</h2>
@@ -443,8 +477,14 @@ function App() {
               </div>
             </div>
             <div className="faq-list">
-              {sections.faq.items.map((item) => (
-                <FaqItem key={item.question} question={item.question} answer={item.answer} />
+              {sections.faq.items.map((item, index) => (
+                <FaqItem
+                  key={item.question}
+                  question={item.question}
+                  answer={item.answer}
+                  open={openFaqIndex === index}
+                  onToggle={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                />
               ))}
             </div>
           </div>
@@ -452,7 +492,7 @@ function App() {
 
         <section className="section contact-dark" id="contact">
           <div className="contact-layout">
-            <div className="contact-left">
+            <div className="contact-left reveal">
               <span className="section-tag contact-tag">{sections.contact.tag}</span>
               <h2>{sections.contact.title}</h2>
               <p>{sections.contact.description}</p>
@@ -493,7 +533,7 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="contact-right">
+            <div className="contact-right reveal reveal-delay-2">
               <ContactForm c={sections.contact} />
             </div>
           </div>
