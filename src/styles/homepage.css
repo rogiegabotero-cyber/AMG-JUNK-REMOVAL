@@ -1369,7 +1369,7 @@ a {
 }
 
 .truck-panel-specs {
-  background: var(--hero-navy-deep);
+  background: #07080c;
   padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2.25rem);
   display: flex;
   flex-direction: column;
