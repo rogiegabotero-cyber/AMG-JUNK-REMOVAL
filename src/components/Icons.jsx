@@ -161,6 +161,163 @@ export function ChevronDownIcon(props) {
   )
 }
 
+export function FacebookIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true" {...props}>
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export function InstagramIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true" {...props}>
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+    </svg>
+  )
+}
+
+export function TikTokIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true" {...props}>
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export function WhatsAppIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.09-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+        fill="currentColor"
+        fillOpacity="0.08"
+      />
+      <path
+        d="M8.5 9.5c.2.8.7 2.3 2 3.5s2.7 1.8 3.5 2c.3.1.6 0 .8-.2l.7-.8c.2-.2.5-.2.7-.1l2 1c.3.1.4.5.2.7l-.8 1c-.4.5-1 .8-1.6.7-1.3-.2-4-1.2-5.8-3-1.8-1.8-2.8-4.5-3-5.8-.1-.6.2-1.2.7-1.6l1-.8c.2-.2.6-.1.7.2l1 2c.1.2.1.5-.1.7l-.8.7c-.2.2-.3.5-.2.7Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function CreditCardIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true" {...props}>
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M2 10h20" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M6 15h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function ZelleIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" {...props}>
+      <path d="M12 2L2 7l10 5 10-5-10-5z" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 17l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 12l10 5 10-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export function CashIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" {...props}>
+      <rect x="3" y="6" width="18" height="12" rx="1.5" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M3 10h2M19 10h2M3 14h2M19 14h2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+export function PinIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 14 6 14s6-9.5 6-14c0-3.31-2.69-6-6-6Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="8" r="2" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  )
+}
+
+export function StarIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 3l2.4 6.3H21l-5.5 4 2.1 6.5L12 16l-5.6 3.8 2.1-6.5L3 9.3h6.6L12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function ShieldIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 3 4 6.5v5c0 4.5 3.4 8.7 8 9.5 4.6-.8 8-5 8-9.5v-5L12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function BoltIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M13 3 5 13.5h7L9 21l10-10.5h-7L13 3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function DollarIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 3v18M8.5 7.5A3.5 3.5 0 0 1 12 6h.5A3 3 0 0 1 12 12a3 3 0 0 0 0 6h.5a3.5 3.5 0 0 0 3-1.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export function RecycleIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M12 3 9 8h6L12 3ZM5.5 16.5l-2.5-4.5h5M18.5 16.5l2.5-4.5h-5M9 20h6M12 8v6M5.5 16.5 9 20M18.5 16.5 15 20"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function ClockIcon(props) {
   return (
     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true" {...props}>

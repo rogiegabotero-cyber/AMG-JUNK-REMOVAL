@@ -93,7 +93,10 @@ function PageHeader({ headerContent, languageCode, onLanguageChange }) {
               aria-label={`${headerContent.languageMenuLabel}: ${selectedLanguage.label}`}
               onClick={() => setIsLanguageMenuOpen((currentValue) => !currentValue)}
             >
-              <GlobeIcon /> {selectedLanguage.label} <ChevronDownIcon />
+              <GlobeIcon />
+              {selectedLanguage.badge ? <span className="lang-badge">{selectedLanguage.badge}</span> : null}
+              {selectedLanguage.label}
+              <ChevronDownIcon />
             </button>
             {isLanguageMenuOpen ? (
               <div
@@ -112,6 +115,7 @@ function PageHeader({ headerContent, languageCode, onLanguageChange }) {
                     }`}
                     onClick={() => handleLanguageSelect(language)}
                   >
+                    {language.badge ? <span className="lang-badge">{language.badge}</span> : null}
                     <span>{language.label}</span>
                     {selectedLanguage.code === language.code ? (
                       <span className="language-option-check">{headerContent.current}</span>

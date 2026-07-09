@@ -1,7 +1,7 @@
 export const languageOptions = [
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Espanol' },
-  { code: 'ht', label: 'Kreyol' },
+  { code: 'en', label: 'English',         badge: 'US' },
+  { code: 'es', label: 'Español',         badge: 'ES' },
+  { code: 'ht', label: 'Kreyòl Ayisyen', badge: 'HT' },
 ]
 
 const sharedAreas = [
@@ -152,22 +152,41 @@ export const contentByLanguage = {
         title: 'The AMG Difference',
         description:
           'We remove junk faster, cleaner, and more responsibly than anyone else in Palm Beach County.',
+        truckPanel: {
+          specsLabel: 'King-Size Truck Specs',
+          specs: [
+            { value: '15', unit: 'Cubic\u00a0Yards' },
+            { value: '14 ft', unit: 'Length' },
+            { value: '7 ft', unit: 'Width' },
+            { value: '4 ft', unit: 'Height' },
+            { value: '20%', unit: 'Bigger than competition' },
+          ],
+          trust: [
+            { icon: 'star', title: '5-Star Rating', subtitle: '20+ Google Reviews' },
+            { icon: 'shield', title: 'Neighborly Certified', subtitle: 'Trusted local partner' },
+            { icon: 'shield', title: 'Fully Insured', subtitle: 'Licensed & bonded' },
+          ],
+        },
         items: [
           {
             title: 'Super Fast Service',
             description: 'Same-day and next-day appointments are available with guaranteed arrival windows.',
+            icon: 'bolt',
           },
           {
             title: 'Eco-Friendly Disposal',
             description: 'We recycle or donate more than 60% of what we collect whenever possible.',
+            icon: 'recycle',
           },
           {
             title: 'Fair and Flexible Pricing',
             description: 'Upfront quotes, no hidden fees, and pricing based on the space you use.',
+            icon: 'dollar',
           },
           {
             title: 'King-Size Trucks',
             description: 'Our trucks are 20% bigger than the competition for fewer trips and faster jobs.',
+            icon: 'truck',
           },
         ],
       },
@@ -175,13 +194,19 @@ export const contentByLanguage = {
         tag: 'Service Area',
         title: 'Serving Palm Beach County',
         description:
-          'Proudly providing professional junk removal, sod installation, and delivery services across the county.',
+          'Proudly providing professional junk removal across Palm Beach County.\nCan\'t find your city? Call us — we likely serve your area too.',
+        locationTitle: 'Palm Beach County',
+        locationSub: 'Florida, USA',
+        callout: "Don't see your city? We likely serve your area.",
+        calloutCta: 'Call (561) 762-0065',
         items: sharedAreas,
       },
       faq: {
         tag: 'FAQ',
         title: 'Frequently Asked Questions',
         description: 'Have a question not listed here? Our team is always happy to help.',
+        contactPhone: '(561) 762-0065',
+        contactForm: 'Contact Form',
         items: [
           {
             question: 'What services do you offer?',
@@ -212,12 +237,29 @@ export const contentByLanguage = {
         ],
       },
       contact: {
-        tag: 'Ready to Start',
+        tag: 'Contact Us',
         title: 'Ready to Get Started Today?',
         description:
-          'Contact us now and we will take care of the rest with fast response, same-day availability, and dependable service.',
+          'Contact us now and we will take care of the rest. Fast response, same-day service available across Palm Beach County.',
         callUs: 'Call Us',
         textUs: 'Text Us',
+        phoneLabel: 'PHONE',
+        textLabel: 'TEXT',
+        hoursLabel: 'HOURS',
+        hoursValue: 'Every day 7 AM – 7 PM',
+        weAccept: 'WE ACCEPT',
+        payments: ['Credit Card', 'Zelle', 'Cash'],
+        waFormTitle: 'Contact via WhatsApp',
+        waName: 'Your Name',
+        waNamePlaceholder: 'John Smith',
+        waService: 'Service Needed',
+        waServicePlaceholder: 'Select a service...',
+        waServices: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup', 'Truck & Dumpster Rental'],
+        waCity: 'City / Area',
+        waCityPlaceholder: 'e.g. West Palm Beach, Boca Raton...',
+        waDesc: 'Brief Description',
+        waDescPlaceholder: 'e.g. Old sofa, fridge and some boxes...',
+        waSend: 'Send via WhatsApp',
       },
     },
     footer: {
@@ -225,8 +267,16 @@ export const contentByLanguage = {
         'Fast, eco-friendly junk removal, sod installation, and same-day delivery across Palm Beach County.',
       servicesTitle: 'Services',
       companyTitle: 'Company',
-      services: ['Junk Removal', 'Sod Installation', 'Fast Delivery and Pickup', 'Truck and Dumpster Rent'],
+      services: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup', 'Truck & Dumpster Rent'],
       company: ['How It Works', 'Why Choose Us', 'Service Areas', 'FAQ', 'Contact Us'],
+      ctaTitle: 'Ready to Start?',
+      ctaDesc: 'Same-day service available. Call or text us now.',
+      callUs: 'Call Us',
+      whatsapp: 'WhatsApp',
+      hours: 'Every day · 7 AM – 7 PM',
+      copyright: '\u00a9 2026 AMG Junk Removal LLC. All rights reserved.',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
     },
   },
   es: {
@@ -348,22 +398,41 @@ export const contentByLanguage = {
         title: 'La Diferencia AMG',
         description:
           'Retiramos basura mas rapido, mas limpio y con mas responsabilidad que cualquier otro en Palm Beach County.',
+        truckPanel: {
+          specsLabel: 'Especificaciones del Camion',
+          specs: [
+            { value: '15', unit: 'Yardas Cubicas' },
+            { value: '14 ft', unit: 'Largo' },
+            { value: '7 ft', unit: 'Ancho' },
+            { value: '4 ft', unit: 'Alto' },
+            { value: '20%', unit: 'Mas grande que la competencia' },
+          ],
+          trust: [
+            { icon: 'star', title: 'Calificacion 5 Estrellas', subtitle: 'Mas de 20 resenas en Google' },
+            { icon: 'shield', title: 'Certificado Neighborly', subtitle: 'Socio local de confianza' },
+            { icon: 'shield', title: 'Totalmente Asegurado', subtitle: 'Con licencia y fianza' },
+          ],
+        },
         items: [
           {
             title: 'Servicio Super Rapido',
             description: 'Hay citas para el mismo dia y el dia siguiente con ventanas de llegada garantizadas.',
+            icon: 'bolt',
           },
           {
             title: 'Desecho Ecoamigable',
             description: 'Reciclamos o donamos mas del 60% de lo que recogemos cuando es posible.',
+            icon: 'recycle',
           },
           {
             title: 'Precios Justos y Flexibles',
             description: 'Presupuestos claros, sin cargos ocultos, y precios basados en el espacio que usas.',
+            icon: 'dollar',
           },
           {
             title: 'Camiones Mas Grandes',
             description: 'Nuestros camiones son 20% mas grandes que los de la competencia para menos viajes y mas rapidez.',
+            icon: 'truck',
           },
         ],
       },
@@ -371,13 +440,19 @@ export const contentByLanguage = {
         tag: 'Zona de Servicio',
         title: 'Sirviendo Palm Beach County',
         description:
-          'Ofrecemos con orgullo remocion de basura, instalacion de cesped y servicios de entrega en todo el condado.',
+          'Ofrecemos remocion de basura profesional en todo Palm Beach County.\n¿No encuentras tu ciudad? Llamanos — probablemente servimos tu area.',
+        locationTitle: 'Palm Beach County',
+        locationSub: 'Florida, USA',
+        callout: '¿No ves tu ciudad? Es probable que sirvamos tu area.',
+        calloutCta: 'Llamar (561) 762-0065',
         items: sharedAreas,
       },
       faq: {
         tag: 'Preguntas',
         title: 'Preguntas Frecuentes',
         description: 'Tienes una pregunta que no aparece aqui? Nuestro equipo siempre esta listo para ayudar.',
+        contactPhone: '(561) 762-0065',
+        contactForm: 'Formulario de Contacto',
         items: [
           {
             question: 'Que servicios ofrecen?',
@@ -408,12 +483,29 @@ export const contentByLanguage = {
         ],
       },
       contact: {
-        tag: 'Listo Para Empezar',
+        tag: 'Contactenos',
         title: 'Listo Para Empezar Hoy?',
         description:
-          'Contactanos ahora y nos encargamos del resto con respuesta rapida, disponibilidad el mismo dia y servicio confiable.',
+          'Contactanos ahora y nos encargamos del resto. Respuesta rapida, servicio el mismo dia en Palm Beach County.',
         callUs: 'Llamanos',
         textUs: 'Escribenos',
+        phoneLabel: 'TELEFONO',
+        textLabel: 'TEXTO',
+        hoursLabel: 'HORARIO',
+        hoursValue: 'Todos los dias 7 AM – 7 PM',
+        weAccept: 'ACEPTAMOS',
+        payments: ['Tarjeta de Credito', 'Zelle', 'Efectivo'],
+        waFormTitle: 'Contactar via WhatsApp',
+        waName: 'Tu Nombre',
+        waNamePlaceholder: 'Juan Garcia',
+        waService: 'Servicio Necesario',
+        waServicePlaceholder: 'Selecciona un servicio...',
+        waServices: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida', 'Renta de Camion y Contenedor'],
+        waCity: 'Ciudad / Zona',
+        waCityPlaceholder: 'ej. West Palm Beach, Boca Raton...',
+        waDesc: 'Descripcion Breve',
+        waDescPlaceholder: 'ej. Sofa viejo, nevera y algunas cajas...',
+        waSend: 'Enviar via WhatsApp',
       },
     },
     footer: {
@@ -423,6 +515,14 @@ export const contentByLanguage = {
       companyTitle: 'Compania',
       services: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida', 'Renta de Camion y Contenedor'],
       company: ['Como Funciona', 'Por Que Elegirnos', 'Zonas de Servicio', 'Preguntas', 'Contactanos'],
+      ctaTitle: 'Listo Para Empezar?',
+      ctaDesc: 'Servicio el mismo dia. Llamanos o escribenos ahora.',
+      callUs: 'Llamanos',
+      whatsapp: 'WhatsApp',
+      hours: 'Todos los dias · 7 AM – 7 PM',
+      copyright: '\u00a9 2026 AMG Junk Removal LLC. Todos los derechos reservados.',
+      privacy: 'Politica de Privacidad',
+      terms: 'Terminos de Servicio',
     },
   },
   ht: {
@@ -544,22 +644,41 @@ export const contentByLanguage = {
         title: 'Diferans AMG la',
         description:
           'Nou retire fatra pi vit, pi pwòp, epi ak plis responsablite pase nenpòt lòt moun nan Palm Beach County.',
+        truckPanel: {
+          specsLabel: 'Espesifikasyon Gwo Kamyon',
+          specs: [
+            { value: '15', unit: 'Yad Kib' },
+            { value: '14 ft', unit: 'Longè' },
+            { value: '7 ft', unit: 'Lajè' },
+            { value: '4 ft', unit: 'Wotè' },
+            { value: '20%', unit: 'Pi gwo pase konpetisyon' },
+          ],
+          trust: [
+            { icon: 'star', title: 'Nòt 5 Etwal', subtitle: 'Plis pase 20 revizyon Google' },
+            { icon: 'shield', title: 'Sètifye Neighborly', subtitle: 'Patnè lokal ou ka fye' },
+            { icon: 'shield', title: 'Asirans Konplè', subtitle: 'Lisans ak garanti' },
+          ],
+        },
         items: [
           {
             title: 'Sèvis Trè Vit',
             description: 'Randevou menm jou ak pwochen jou disponib ak fenèt arive garanti.',
+            icon: 'bolt',
           },
           {
             title: 'Jete Fatra Ekolojik',
             description: 'Nou resikle oswa bay plis pase 60% nan sa nou ranmase lè sa posib.',
+            icon: 'recycle',
           },
           {
             title: 'Pri Jis ak Fleksib',
             description: 'Pri davans, pa gen frè kache, epi pri baze sou espas ou itilize a.',
+            icon: 'dollar',
           },
           {
             title: 'Gwo Kamyon',
             description: 'Kamyon nou yo 20% pi gwo pase konpetisyon an pou mwens vwayaj ak travay pi rapid.',
+            icon: 'truck',
           },
         ],
       },
@@ -567,13 +686,19 @@ export const contentByLanguage = {
         tag: 'Zòn Sèvis',
         title: 'N ap Sèvi Palm Beach County',
         description:
-          'Nou fyè pou nou ofri retire fatra, enstalasyon gazon, ak sèvis livrezon atravè tout konte a.',
+          'Nou ofri sèvis retire fatra pwofesyonèl nan tout Palm Beach County.\nPa wè vil ou? Rele nou — nou sèvi zòn ou tou.',
+        locationTitle: 'Palm Beach County',
+        locationSub: 'Florida, USA',
+        callout: 'Pa wè vil ou? Nou sèvi zòn ou tou.',
+        calloutCta: 'Rele (561) 762-0065',
         items: sharedAreas,
       },
       faq: {
         tag: 'Kesyon',
         title: 'Kesyon Yo Poze Souvan',
         description: 'Ou gen yon kesyon ki pa sou lis la? Ekip nou an toujou pare pou ede.',
+        contactPhone: '(561) 762-0065',
+        contactForm: 'Fòm Kontak',
         items: [
           {
             question: 'Ki sèvis nou ofri?',
@@ -604,12 +729,29 @@ export const contentByLanguage = {
         ],
       },
       contact: {
-        tag: 'Pare Pou Kòmanse',
+        tag: 'Kontakte Nou',
         title: 'Pare Pou Kòmanse Jodi a?',
         description:
-          'Kontakte nou kounye a epi n ap pran swen rès la ak repons rapid, disponiblite menm jou, ak sèvis serye.',
+          'Kontakte nou kounye a epi n ap pran swen rès la. Repons rapid, sèvis menm jou nan tout Palm Beach County.',
         callUs: 'Rele Nou',
         textUs: 'Voye Teks',
+        phoneLabel: 'TELEFÒN',
+        textLabel: 'TÈKS',
+        hoursLabel: 'ORÈ',
+        hoursValue: 'Chak jou 7 AM – 7 PM',
+        weAccept: 'NOU AKSEPTE',
+        payments: ['Kat Kredi', 'Zelle', 'Kash'],
+        waFormTitle: 'Kontakte via WhatsApp',
+        waName: 'Non Ou',
+        waNamePlaceholder: 'Jan Duval',
+        waService: 'Sèvis Ou Bezwen',
+        waServicePlaceholder: 'Chwazi yon sèvis...',
+        waServices: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon Rapid', 'Lwe Kamyon ak Bwat'],
+        waCity: 'Vil / Zòn',
+        waCityPlaceholder: 'ex. West Palm Beach, Boca Raton...',
+        waDesc: 'Deskripsyon Kout',
+        waDescPlaceholder: 'ex. Vye sofa, frijidè ak kèk bwat...',
+        waSend: 'Voye via WhatsApp',
       },
     },
     footer: {
@@ -619,6 +761,14 @@ export const contentByLanguage = {
       companyTitle: 'Konpayi',
       services: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon ak Ranmase Vit', 'Lwe Kamyon ak Bwat'],
       company: ['Kijan Li Mache', 'Poukisa Chwazi Nou', 'Zòn Sèvis', 'Kesyon', 'Kontakte Nou'],
+      ctaTitle: 'Pare Pou Kòmanse?',
+      ctaDesc: 'Sèvis menm jou disponib. Rele oswa voye teks kounye a.',
+      callUs: 'Rele Nou',
+      whatsapp: 'WhatsApp',
+      hours: 'Chak jou · 7 AM – 7 PM',
+      copyright: '\u00a9 2026 AMG Junk Removal LLC. Tout dwa rezève.',
+      privacy: 'Polis Konfidansyalite',
+      terms: 'Tèm Sèvis',
     },
   },
 }

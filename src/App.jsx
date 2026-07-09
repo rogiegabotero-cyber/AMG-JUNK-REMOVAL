@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './styles/homepage.css'
 import PageHeader from './components/PageHeader'
 import heroTeam from './assets/team.jpg'
+import truckImg from './assets/truck-hero.jpg'
 import SectionHeading from './components/SectionHeading'
 import WorkCompareCard from './components/WorkCompareCard'
 import PageFooter from './components/PageFooter'
@@ -15,6 +16,17 @@ import {
   DeliveryIcon,
   CheckIcon,
   ArrowRightIcon,
+  BoltIcon,
+  DollarIcon,
+  RecycleIcon,
+  StarIcon,
+  ShieldIcon,
+  PinIcon,
+  ChevronDownIcon,
+  WhatsAppIcon,
+  CreditCardIcon,
+  ZelleIcon,
+  CashIcon,
 } from './components/Icons'
 import { contentByLanguage } from './data/siteContent'
 
@@ -30,6 +42,81 @@ const serviceIcons = {
   cart: CartIcon,
   sod: SodIcon,
   delivery: DeliveryIcon,
+}
+
+const featureIcons = {
+  bolt: BoltIcon,
+  recycle: RecycleIcon,
+  dollar: DollarIcon,
+  truck: TruckIcon,
+}
+
+const trustIcons = {
+  star: StarIcon,
+  shield: ShieldIcon,
+}
+
+const paymentIcons = { 'Credit Card': CreditCardIcon, 'Tarjeta de Credito': CreditCardIcon, 'Kat Kredi': CreditCardIcon, Zelle: ZelleIcon, Cash: CashIcon, Efectivo: CashIcon, Kash: CashIcon }
+
+function ContactForm({ c }) {
+  const [name, setName] = useState('')
+  const [service, setService] = useState('')
+  const [city, setCity] = useState('')
+  const [desc, setDesc] = useState('')
+
+  const handleSend = (e) => {
+    e.preventDefault()
+    const msg = `Hi, I'd like to request a service.%0AName: ${encodeURIComponent(name)}%0AService: ${encodeURIComponent(service)}%0ACity: ${encodeURIComponent(city)}%0ADescription: ${encodeURIComponent(desc)}`
+    window.open(`https://wa.me/15617620065?text=${msg}`, '_blank')
+  }
+
+  return (
+    <form className="wa-form" onSubmit={handleSend}>
+      <div className="wa-form-header">
+        <WhatsAppIcon />
+        <span>{c.waFormTitle}</span>
+      </div>
+      <div className="wa-form-body">
+        <div className="wa-field">
+          <label>{c.waName}</label>
+          <input type="text" placeholder={c.waNamePlaceholder} value={name} onChange={e => setName(e.target.value)} required />
+        </div>
+        <div className="wa-field">
+          <label>{c.waService}</label>
+          <div className="wa-select-wrap">
+            <select value={service} onChange={e => setService(e.target.value)} required>
+              <option value="" disabled>{c.waServicePlaceholder}</option>
+              {c.waServices.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+        </div>
+        <div className="wa-field">
+          <label>{c.waCity}</label>
+          <input type="text" placeholder={c.waCityPlaceholder} value={city} onChange={e => setCity(e.target.value)} />
+        </div>
+        <div className="wa-field">
+          <label>{c.waDesc} <span className="wa-optional">(optional)</span></label>
+          <textarea placeholder={c.waDescPlaceholder} value={desc} onChange={e => setDesc(e.target.value)} rows={3} />
+        </div>
+        <button type="submit" className="wa-submit">
+          <WhatsAppIcon /> {c.waSend}
+        </button>
+      </div>
+    </form>
+  )
+}
+
+function FaqItem({ question, answer }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className={`faq-item${open ? ' faq-item--open' : ''}`}>
+      <button className="faq-question" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+        <span>{question}</span>
+        <ChevronDownIcon />
+      </button>
+      <div className="faq-answer" hidden={!open}>{answer}</div>
+    </div>
+  )
 }
 
 function App() {
@@ -60,7 +147,7 @@ function App() {
       <main>
         <section className="hero-dark">
           <div className="hero-visual">
-            <img src={heroTeam} alt="AMG Junk Removal crew" />
+            <img src={heroTeam} alt="AMG Junk Removal crew" width="900" height="600" fetchpriority="high" />
             <div className="hero-visual-fade" aria-hidden="true" />
 
             <div className="hero-badges">
@@ -154,7 +241,6 @@ function App() {
         <section className="section" id="work">
           <SectionHeading
             tag={sections.work.tag}
-            title={sections.work.title}
             description={sections.work.description}
           />
           <div className="work-grid">
@@ -162,9 +248,9 @@ function App() {
               <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
             ))}
           </div>
-          <div className="hero-actions">
-            <a className="button-primary" href="#contact">
-              {sections.work.cta}
+          <div className="work-cta">
+            <a className="button-call" href="#contact">
+              <PhoneIcon /> {sections.work.cta}
             </a>
           </div>
         </section>
@@ -179,13 +265,15 @@ function App() {
             {sections.steps.items.map((step, index) => (
               <article className="step-card" key={step.number}>
                 <span className="step-number">{step.number}</span>
-                <h3>{step.title}</h3>
+                <h3>
+                  {step.title}
+                  {index < sections.steps.items.length - 1 ? (
+                    <span className="step-arrow" aria-hidden="true">
+                      <ArrowRightIcon />
+                    </span>
+                  ) : null}
+                </h3>
                 <p>{step.description}</p>
-                {index < sections.steps.items.length - 1 ? (
-                  <span className="step-arrow" aria-hidden="true">
-                    <ArrowRightIcon />
-                  </span>
-                ) : null}
               </article>
             ))}
           </div>
@@ -199,6 +287,24 @@ function App() {
               </p>
             </div>
           ) : null}
+          <div className="steps-cta-row">
+            <a className="steps-cta-card steps-cta-primary" href="tel:+15617620065">
+              <span className="steps-cta-icon"><PhoneIcon /></span>
+              <span className="steps-cta-text">
+                <strong>{sections.contact.callUs}</strong>
+                <small>(561) 762-0065</small>
+              </span>
+              <ArrowRightIcon />
+            </a>
+            <a className="steps-cta-card steps-cta-secondary" href="sms:+15617620065">
+              <span className="steps-cta-icon"><ChatIcon /></span>
+              <span className="steps-cta-text">
+                <strong>{sections.contact.textUs}</strong>
+                <small>(561) 762-0065</small>
+              </span>
+              <ArrowRightIcon />
+            </a>
+          </div>
         </section>
 
         <section className="section" id="why-us">
@@ -208,13 +314,58 @@ function App() {
             description={sections.features.description}
           />
           <div className="features-grid">
-            {sections.features.items.map((feature) => (
-              <article className="feature-card" key={feature.title}>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </article>
-            ))}
+            {sections.features.items.map((feature) => {
+              const Icon = featureIcons[feature.icon]
+              return (
+                <article className="feature-card" key={feature.title}>
+                  {Icon ? (
+                    <span className="feature-icon">
+                      <Icon />
+                    </span>
+                  ) : null}
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </article>
+              )
+            })}
           </div>
+
+          {sections.features.truckPanel ? (
+            <>
+              <div className="truck-panel">
+                <div className="truck-panel-photo">
+                  <img src={truckImg} alt="AMG king-size truck" width="600" height="400" loading="lazy" />
+                </div>
+                <div className="truck-panel-specs">
+                  <span className="truck-specs-label">
+                    <TruckIcon /> {sections.features.truckPanel.specsLabel}
+                  </span>
+                  <div className="truck-specs-grid">
+                    {sections.features.truckPanel.specs.map((spec) => (
+                      <div className="truck-spec-item" key={spec.unit}>
+                        <strong>{spec.value}</strong>
+                        <span>{spec.unit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="trust-badges">
+                {sections.features.truckPanel.trust.map((badge) => {
+                  const Icon = trustIcons[badge.icon]
+                  return (
+                    <div className="trust-badge" key={badge.title}>
+                      <span className="trust-badge-icon">{Icon ? <Icon /> : null}</span>
+                      <span className="trust-badge-text">
+                        <strong>{badge.title}</strong>
+                        <small>{badge.subtitle}</small>
+                      </span>
+                    </div>
+                  )
+                })}
+              </div>
+            </>
+          ) : null}
         </section>
 
         <section className="section" id="areas">
@@ -223,43 +374,102 @@ function App() {
             title={sections.areas.title}
             description={sections.areas.description}
           />
-          <div className="areas-list">
-            {sections.areas.items.map((area) => (
-              <span className="area-pill" key={area}>
-                {area}
-              </span>
-            ))}
+          <div className="areas-body">
+            <div className="areas-location-card">
+              <div className="areas-pin-graphic" aria-hidden="true">
+                <span className="areas-pin-ring areas-pin-ring-outer" />
+                <span className="areas-pin-ring areas-pin-ring-inner" />
+                <PinIcon width="28" height="28" />
+              </div>
+              <strong>{sections.areas.locationTitle}</strong>
+              <span>{sections.areas.locationSub}</span>
+            </div>
+            <div className="areas-right">
+              <div className="areas-grid">
+                {sections.areas.items.map((area) => (
+                  <span className="area-pill" key={area}>
+                    <PinIcon />{area}
+                  </span>
+                ))}
+              </div>
+              <div className="areas-callout">
+                <span>{sections.areas.callout}</span>
+                <a className="button-call" href="tel:+15617620065">
+                  <PhoneIcon /> {sections.areas.calloutCta}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="section" id="faq">
-          <SectionHeading
-            tag={sections.faq.tag}
-            title={sections.faq.title}
-            description={sections.faq.description}
-          />
-          <div className="faq-list">
-            {sections.faq.items.map((item) => (
-              <div className="faq-item" key={item.question}>
-                <strong>{item.question}</strong>
-                <span>{item.answer}</span>
+          <div className="faq-layout">
+            <div className="faq-sidebar">
+              <span className="section-tag">{sections.faq.tag}</span>
+              <h2>{sections.faq.title}</h2>
+              <p>{sections.faq.description}</p>
+              <div className="faq-contacts">
+                <a className="faq-contact-btn" href="tel:+15617620065">
+                  <PhoneIcon /> {sections.faq.contactPhone}
+                </a>
+                <a className="faq-contact-btn" href="#contact">
+                  <ChatIcon /> {sections.faq.contactForm}
+                </a>
               </div>
-            ))}
+            </div>
+            <div className="faq-list">
+              {sections.faq.items.map((item) => (
+                <FaqItem key={item.question} question={item.question} answer={item.answer} />
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section" id="contact">
-          <div className="contact-panel">
-            <span className="section-tag">{sections.contact.tag}</span>
-            <h2>{sections.contact.title}</h2>
-            <p>{sections.contact.description}</p>
-            <div className="contact-actions">
-              <a className="button-secondary" href="tel:+15617620065">
-                {sections.contact.callUs}
-              </a>
-              <a className="button-secondary" href="sms:+15617620065">
-                {sections.contact.textUs}
-              </a>
+        <section className="section contact-dark" id="contact">
+          <div className="contact-layout">
+            <div className="contact-left">
+              <span className="section-tag contact-tag">{sections.contact.tag}</span>
+              <h2>{sections.contact.title}</h2>
+              <p>{sections.contact.description}</p>
+              <div className="contact-info">
+                <div className="contact-info-row">
+                  <span className="contact-info-icon"><PhoneIcon /></span>
+                  <div>
+                    <span className="contact-info-label">{sections.contact.phoneLabel}</span>
+                    <a href="tel:+15617620065" className="contact-info-value">(561) 762-0065</a>
+                  </div>
+                </div>
+                <div className="contact-info-row">
+                  <span className="contact-info-icon"><ChatIcon /></span>
+                  <div>
+                    <span className="contact-info-label">{sections.contact.textLabel}</span>
+                    <a href="sms:+15617620065" className="contact-info-value">(561) 762-0065</a>
+                  </div>
+                </div>
+                <div className="contact-info-row">
+                  <span className="contact-info-icon"><ClockIcon /></span>
+                  <div>
+                    <span className="contact-info-label">{sections.contact.hoursLabel}</span>
+                    <span className="contact-info-value">{sections.contact.hoursValue}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="contact-payments">
+                <span className="contact-payments-label">{sections.contact.weAccept}</span>
+                <div className="contact-payments-row">
+                  {sections.contact.payments.map((p) => {
+                    const Icon = paymentIcons[p]
+                    return (
+                      <div className="contact-payment-pill" key={p}>
+                        {Icon && <Icon />} {p}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+            <div className="contact-right">
+              <ContactForm c={sections.contact} />
             </div>
           </div>
         </section>
