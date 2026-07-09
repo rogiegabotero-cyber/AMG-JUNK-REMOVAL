@@ -5,31 +5,33 @@ export const languageOptions = [
 ]
 
 const sharedAreas = [
-  'Boynton Beach',
-  'Delray Beach',
-  'Greenacres',
-  'Lake Worth',
-  'Lake Worth Beach',
-  'Lantana',
-  'Palm Springs',
-  'Wellington',
-  'West Palm Beach',
-  'Jupiter',
-  'Palm Beach Gardens',
-  'Riviera Beach',
-  'Boca Raton',
+  'Fort Lauderdale',
+  'Hollywood',
+  'Pembroke Pines',
+  'Miramar',
+  'Coral Springs',
+  'Plantation',
+  'Davie',
+  'Pompano Beach',
+  'Weston',
+  'Miami',
+  'Homestead',
+  'Key Largo',
+  'Islamorada',
+  'Marathon',
+  'Key West',
 ]
 
 const sharedWorkItems = [
   {
     title: 'Sod Installation',
-    location: 'Palm Beach County',
+    location: 'South Florida',
     before: 'https://amgjunkremovalpalmbeach.com/work-sod-before.jpg',
     after: 'https://amgjunkremovalpalmbeach.com/work-sod-after.jpg',
   },
   {
     title: 'Junk & Debris Removal',
-    location: 'Palm Beach County',
+    location: 'South Florida',
     before: 'https://amgjunkremovalpalmbeach.com/work-junk-before.jpg',
     after: 'https://amgjunkremovalpalmbeach.com/work-junk-after.jpg',
   },
@@ -43,18 +45,24 @@ export const contentByLanguage = {
         work: 'Our Work',
         howItWorks: 'How It Works',
         whyUs: 'Why Us',
-        areas: 'Areas',
+        areas: 'Service Areas',
         faq: 'FAQ',
+        contact: 'Contact',
       },
       callUs: 'Call Us',
+      textUs: 'Text Us',
       languageMenuLabel: 'Selected language',
       languageMenuAria: 'Language options',
       current: 'Current',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      menuNote: 'Free estimates. Same-day service.',
     },
     hero: {
-      lines: ["Palm Beach's #1", 'Junk Removal', 'Service'],
+      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      trustLine: 'Trusted Across Broward County to the Florida Keys',
       description:
-        'Junk removal, sod installation and same-day delivery & pickup. Free estimates, eco-friendly disposal, and up to 60% recycled or donated.',
+        'Junk removal, sod installation, top soil, #57 rock, pea rock, sand, mulch and more — with fast delivery & pickup across South Florida.',
       callText: 'Text Us',
       stats: [
         { value: 'Same Day', label: 'Appointments' },
@@ -71,23 +79,14 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'What We Do',
-        titleLines: ['Four Services.', 'One Reliable Crew.'],
+        titleLines: ['Three Services.', 'One Reliable Crew.'],
         description:
-          'From hauling junk to laying fresh sod and same-day deliveries, we cover it all across Palm Beach County.',
+          'From hauling junk to laying fresh sod and same-day deliveries, we cover it all from Broward County to the Florida Keys.',
         cta: 'Request Service',
         items: [
           {
-            title: 'Rent',
-            subtitle: 'Need a truck or dumpster for your project?',
-            description:
-              'Rent our equipment at competitive rates with flexible durations and no hidden fees.',
-            bullets: ['Flexible rental periods', 'Trucks and dumpsters available', 'No hidden charges'],
-            accent: 'service-card rent',
-            icon: 'truck',
-          },
-          {
             title: 'Junk Removal',
-            subtitle: 'We haul away the heavy stuff.',
+            subtitle: 'We haul away:',
             description:
               'Furniture, appliances, yard waste, and full property cleanouts. We lift, load, and leave it tidy.',
             bullets: ['Same-day appointments', 'Free on-site estimates', 'Up to 60% recycled or donated'],
@@ -105,10 +104,10 @@ export const contentByLanguage = {
           },
           {
             title: 'Fast Delivery and Pickup',
-            subtitle: 'Same-day service across Palm Beach County.',
+            subtitle: 'Same-day service From Key Largo North to North Broward County Line .',
             description:
               'We deliver and pick up materials, bags, and items quickly and professionally.',
-            bullets: ['Same-day availability', 'Materials, bags and items', 'All Palm Beach County'],
+            bullets: ['Same-day availability', 'Materials, bags and items', 'Broward County to the Keys'],
             accent: 'service-card delivery',
             icon: 'delivery',
           },
@@ -117,7 +116,7 @@ export const contentByLanguage = {
       work: {
         tag: 'Our Work',
         title: 'Before and After',
-        description: 'Real jobs, real results. See the AMG difference in action.',
+        description: 'Real jobs, real results. See the Proline difference in action.',
         cta: 'Get Your Estimate',
         items: sharedWorkItems,
       },
@@ -149,9 +148,9 @@ export const contentByLanguage = {
       },
       features: {
         tag: 'Why Choose Us',
-        title: 'The AMG Difference',
+        title: 'The Proline Difference',
         description:
-          'We remove junk faster, cleaner, and more responsibly than anyone else in Palm Beach County.',
+          'We remove junk faster, cleaner, and more responsibly than anyone else in South Florida.',
         truckPanel: {
           specsLabel: 'King-Size Truck Specs',
           specs: [
@@ -192,26 +191,26 @@ export const contentByLanguage = {
       },
       areas: {
         tag: 'Service Area',
-        title: 'Serving Palm Beach County',
+        title: 'Serving Broward County to the Florida Keys',
         description:
-          'Proudly providing professional junk removal across Palm Beach County.\nCan\'t find your city? Call us — we likely serve your area too.',
-        locationTitle: 'Palm Beach County',
-        locationSub: 'Florida, USA',
+          'Proudly providing professional junk removal from Broward County to the Florida Keys.\nCan\'t find your city? Call us — we likely serve your area too.',
+        locationTitle: 'South Florida',
+        locationSub: 'Broward County to the Keys',
         callout: "Don't see your city? We likely serve your area.",
-        calloutCta: 'Call (561) 762-0065',
+        calloutCta: 'Call (305) 713-4647',
         items: sharedAreas,
       },
       faq: {
         tag: 'FAQ',
         title: 'Frequently Asked Questions',
         description: 'Have a question not listed here? Our team is always happy to help.',
-        contactPhone: '(561) 762-0065',
+        contactPhone: '(305) 713-4647',
         contactForm: 'Contact Form',
         items: [
           {
             question: 'What services do you offer?',
             answer:
-              'We provide junk removal, sod installation, truck and dumpster rentals, and fast delivery and pickup services.',
+              'We provide junk removal, sod installation, fast delivery and pickup, and landscape materials including top soil, #57 rock, pea rock, sand, and mulch.',
           },
           {
             question: 'How much does junk removal cost?',
@@ -228,7 +227,7 @@ export const contentByLanguage = {
           },
           {
             question: 'Which areas do you serve?',
-            answer: 'We serve most of Palm Beach County and are happy to confirm coverage for your city or neighborhood.',
+            answer: 'We serve most areas from Broward County to the Florida Keys and are happy to confirm coverage for your city or neighborhood.',
           },
           {
             question: 'How is junk removal pricing determined?',
@@ -240,7 +239,7 @@ export const contentByLanguage = {
         tag: 'Contact Us',
         title: 'Ready to Get Started Today?',
         description:
-          'Contact us now and we will take care of the rest. Fast response, same-day service available across Palm Beach County.',
+          'Contact us now and we will take care of the rest. Fast response, same-day service available from Broward County to the Florida Keys.',
         callUs: 'Call Us',
         textUs: 'Text Us',
         phoneLabel: 'PHONE',
@@ -254,9 +253,9 @@ export const contentByLanguage = {
         waNamePlaceholder: 'John Smith',
         waService: 'Service Needed',
         waServicePlaceholder: 'Select a service...',
-        waServices: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup', 'Truck & Dumpster Rental'],
+        waServices: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup'],
         waCity: 'City / Area',
-        waCityPlaceholder: 'e.g. West Palm Beach, Boca Raton...',
+        waCityPlaceholder: 'e.g. Fort Lauderdale, Key West...',
         waDesc: 'Brief Description',
         waDescPlaceholder: 'e.g. Old sofa, fridge and some boxes...',
         waSend: 'Send via WhatsApp',
@@ -264,17 +263,17 @@ export const contentByLanguage = {
     },
     footer: {
       description:
-        'Fast, eco-friendly junk removal, sod installation, and same-day delivery across Palm Beach County.',
+        'Fast, eco-friendly junk removal, sod installation, and same-day delivery from Broward County to the Florida Keys.',
       servicesTitle: 'Services',
       companyTitle: 'Company',
-      services: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup', 'Truck & Dumpster Rent'],
+      services: ['Junk Removal', 'Sod Installation', 'Fast Delivery & Pickup'],
       company: ['How It Works', 'Why Choose Us', 'Service Areas', 'FAQ', 'Contact Us'],
       ctaTitle: 'Ready to Start?',
       ctaDesc: 'Same-day service available. Call or text us now.',
       callUs: 'Call Us',
       whatsapp: 'WhatsApp',
       hours: 'Every day · 7 AM – 7 PM',
-      copyright: '\u00a9 2026 AMG Junk Removal LLC. All rights reserved.',
+      copyright: '\u00a9 2026 Proline Hauling & Property Solutions. All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
     },
@@ -286,18 +285,24 @@ export const contentByLanguage = {
         work: 'Nuestro Trabajo',
         howItWorks: 'Como Funciona',
         whyUs: 'Por Que Nosotros',
-        areas: 'Zonas',
+        areas: 'Zonas de Servicio',
         faq: 'Preguntas',
+        contact: 'Contacto',
       },
       callUs: 'Llamanos',
+      textUs: 'Envianos Texto',
       languageMenuLabel: 'Idioma seleccionado',
       languageMenuAria: 'Opciones de idioma',
       current: 'Actual',
+      menuOpen: 'Abrir menu',
+      menuClose: 'Cerrar menu',
+      menuNote: 'Estimados gratis. Servicio el mismo dia.',
     },
     hero: {
-      lines: ['Numero 1 en Palm Beach', 'Remocion de Basura', 'y Servicios'],
+      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      trustLine: 'De Confianza Desde el Condado de Broward Hasta los Cayos de Florida',
       description:
-        'Remocion de basura, instalacion de cesped y entrega o recogida el mismo dia. Estimados gratis, desecho ecoamigable y hasta 60% reciclado o donado.',
+        'Remocion de basura, instalacion de cesped, top soil, #57 rock, pea rock, arena, mulch y mas — con entrega rapida y recogida en todo el Sur de Florida.',
       callText: 'Envianos Texto',
       stats: [
         { value: 'Mismo Dia', label: 'Citas' },
@@ -314,20 +319,11 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'Lo Que Hacemos',
-        titleLines: ['Cuatro Servicios.', 'Un Equipo Confiable.'],
+        titleLines: ['Tres Servicios.', 'Un Equipo Confiable.'],
         description:
-          'Desde retirar basura hasta instalar cesped fresco y entregas el mismo dia, cubrimos todo Palm Beach County.',
+          'Desde retirar basura hasta instalar cesped fresco y entregas el mismo dia, cubrimos todo desde el Condado de Broward hasta los Cayos de Florida.',
         cta: 'Solicitar Servicio',
         items: [
-          {
-            title: 'Renta',
-            subtitle: 'Necesitas un camion o contenedor para tu proyecto?',
-            description:
-              'Renta nuestro equipo a precios competitivos con tiempos flexibles y sin cargos ocultos.',
-            bullets: ['Periodos flexibles', 'Camiones y contenedores disponibles', 'Sin cargos ocultos'],
-            accent: 'service-card rent',
-            icon: 'truck',
-          },
           {
             title: 'Remocion de Basura',
             subtitle: 'Nos llevamos lo pesado.',
@@ -348,10 +344,10 @@ export const contentByLanguage = {
           },
           {
             title: 'Entrega y Recogida Rapida',
-            subtitle: 'Servicio el mismo dia en todo Palm Beach County.',
+            subtitle: 'Servicio el mismo dia desde el Condado de Broward hasta los Cayos de Florida.',
             description:
               'Entregamos y recogemos materiales, bolsas y articulos de forma rapida y profesional.',
-            bullets: ['Disponibilidad el mismo dia', 'Materiales, bolsas y articulos', 'Todo Palm Beach County'],
+            bullets: ['Disponibilidad el mismo dia', 'Materiales, bolsas y articulos', 'Desde Broward hasta los Cayos'],
             accent: 'service-card delivery',
             icon: 'delivery',
           },
@@ -360,11 +356,11 @@ export const contentByLanguage = {
       work: {
         tag: 'Nuestro Trabajo',
         title: 'Antes y Despues',
-        description: 'Trabajos reales, resultados reales. Mira la diferencia AMG en accion.',
+        description: 'Trabajos reales, resultados reales. Mira la diferencia Proline en accion.',
         cta: 'Obtenga Su Estimado',
         items: [
-          { ...sharedWorkItems[0], title: 'Instalacion de Cesped', location: 'Palm Beach County' },
-          { ...sharedWorkItems[1], title: 'Remocion de Basura y Escombros', location: 'Palm Beach County' },
+          { ...sharedWorkItems[0], title: 'Instalacion de Cesped', location: 'Sur de Florida' },
+          { ...sharedWorkItems[1], title: 'Remocion de Basura y Escombros', location: 'Sur de Florida' },
         ],
       },
       steps: {
@@ -395,9 +391,9 @@ export const contentByLanguage = {
       },
       features: {
         tag: 'Por Que Elegirnos',
-        title: 'La Diferencia AMG',
+        title: 'La Diferencia Proline',
         description:
-          'Retiramos basura mas rapido, mas limpio y con mas responsabilidad que cualquier otro en Palm Beach County.',
+          'Retiramos basura mas rapido, mas limpio y con mas responsabilidad que cualquier otro en el Sur de Florida.',
         truckPanel: {
           specsLabel: 'Especificaciones del Camion',
           specs: [
@@ -438,26 +434,26 @@ export const contentByLanguage = {
       },
       areas: {
         tag: 'Zona de Servicio',
-        title: 'Sirviendo Palm Beach County',
+        title: 'Sirviendo Desde Broward Hasta los Cayos de Florida',
         description:
-          'Ofrecemos remocion de basura profesional en todo Palm Beach County.\n¿No encuentras tu ciudad? Llamanos — probablemente servimos tu area.',
-        locationTitle: 'Palm Beach County',
-        locationSub: 'Florida, USA',
+          'Ofrecemos remocion de basura profesional desde el Condado de Broward hasta los Cayos de Florida.\n¿No encuentras tu ciudad? Llamanos — probablemente servimos tu area.',
+        locationTitle: 'Sur de Florida',
+        locationSub: 'Broward hasta los Cayos',
         callout: '¿No ves tu ciudad? Es probable que sirvamos tu area.',
-        calloutCta: 'Llamar (561) 762-0065',
+        calloutCta: 'Llamar (305) 713-4647',
         items: sharedAreas,
       },
       faq: {
         tag: 'Preguntas',
         title: 'Preguntas Frecuentes',
         description: 'Tienes una pregunta que no aparece aqui? Nuestro equipo siempre esta listo para ayudar.',
-        contactPhone: '(561) 762-0065',
+        contactPhone: '(305) 713-4647',
         contactForm: 'Formulario de Contacto',
         items: [
           {
             question: 'Que servicios ofrecen?',
             answer:
-              'Ofrecemos remocion de basura, instalacion de cesped, renta de camiones y contenedores, y entrega o recogida rapida.',
+              'Ofrecemos remocion de basura, instalacion de cesped, entrega o recogida rapida, y materiales de jardineria como top soil, #57 rock, pea rock, arena y mulch.',
           },
           {
             question: 'Cuanto cuesta la remocion de basura?',
@@ -474,7 +470,7 @@ export const contentByLanguage = {
           },
           {
             question: 'Que zonas atienden?',
-            answer: 'Atendemos la mayor parte de Palm Beach County y con gusto confirmamos cobertura para tu ciudad o vecindario.',
+            answer: 'Atendemos la mayoria de las areas desde el Condado de Broward hasta los Cayos de Florida y con gusto confirmamos cobertura para tu ciudad o vecindario.',
           },
           {
             question: 'Como determinan el precio de remocion de basura?',
@@ -486,7 +482,7 @@ export const contentByLanguage = {
         tag: 'Contactenos',
         title: 'Listo Para Empezar Hoy?',
         description:
-          'Contactanos ahora y nos encargamos del resto. Respuesta rapida, servicio el mismo dia en Palm Beach County.',
+          'Contactanos ahora y nos encargamos del resto. Respuesta rapida, servicio el mismo dia desde el Condado de Broward hasta los Cayos de Florida.',
         callUs: 'Llamanos',
         textUs: 'Escribenos',
         phoneLabel: 'TELEFONO',
@@ -500,9 +496,9 @@ export const contentByLanguage = {
         waNamePlaceholder: 'Juan Garcia',
         waService: 'Servicio Necesario',
         waServicePlaceholder: 'Selecciona un servicio...',
-        waServices: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida', 'Renta de Camion y Contenedor'],
+        waServices: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida'],
         waCity: 'Ciudad / Zona',
-        waCityPlaceholder: 'ej. West Palm Beach, Boca Raton...',
+        waCityPlaceholder: 'ej. Fort Lauderdale, Key West...',
         waDesc: 'Descripcion Breve',
         waDescPlaceholder: 'ej. Sofa viejo, nevera y algunas cajas...',
         waSend: 'Enviar via WhatsApp',
@@ -510,17 +506,17 @@ export const contentByLanguage = {
     },
     footer: {
       description:
-        'Remocion de basura rapida y ecoamigable, instalacion de cesped y entrega el mismo dia en Palm Beach County.',
+        'Remocion de basura rapida y ecoamigable, instalacion de cesped y entrega el mismo dia desde Broward hasta los Cayos de Florida.',
       servicesTitle: 'Servicios',
       companyTitle: 'Compania',
-      services: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida', 'Renta de Camion y Contenedor'],
+      services: ['Remocion de Basura', 'Instalacion de Cesped', 'Entrega y Recogida Rapida'],
       company: ['Como Funciona', 'Por Que Elegirnos', 'Zonas de Servicio', 'Preguntas', 'Contactanos'],
       ctaTitle: 'Listo Para Empezar?',
       ctaDesc: 'Servicio el mismo dia. Llamanos o escribenos ahora.',
       callUs: 'Llamanos',
       whatsapp: 'WhatsApp',
       hours: 'Todos los dias · 7 AM – 7 PM',
-      copyright: '\u00a9 2026 AMG Junk Removal LLC. Todos los derechos reservados.',
+      copyright: '\u00a9 2026 Proline Hauling & Property Solutions. Todos los derechos reservados.',
       privacy: 'Politica de Privacidad',
       terms: 'Terminos de Servicio',
     },
@@ -532,18 +528,24 @@ export const contentByLanguage = {
         work: 'Travay Nou',
         howItWorks: 'Kijan Li Mache',
         whyUs: 'Poukisa Nou',
-        areas: 'Zon yo',
+        areas: 'Zon Sevis',
         faq: 'Kesyon',
+        contact: 'Kontak',
       },
       callUs: 'Rele Nou',
+      textUs: 'Voye Teks',
       languageMenuLabel: 'Lang chwazi a',
       languageMenuAria: 'Opsyon lang',
       current: 'Kounye a',
+      menuOpen: 'Louvri meni',
+      menuClose: 'Fèmen meni',
+      menuNote: 'Estimasyon gratis. Sevis menm jou.',
     },
     hero: {
-      lines: ['Nimewo 1 nan Palm Beach', 'Retire Fatra', 'Ak Svis Nou'],
+      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      trustLine: 'Konfyans Soti nan Konte Broward Rive nan Florida Keys',
       description:
-        'Retire fatra, enstalasyon gazon ak livrezon oswa ranmase menm jou a. Estimasyon gratis, fason ekolojik, epi jiska 60% resikle oswa bay.',
+        'Retire fatra, enstalasyon gazon, top soil, #57 rock, pea rock, sab, mulch ak plis ankò — ak livrezon rapid ak ranmase nan tout Sid Florid.',
       callText: 'Voye Teks',
       stats: [
         { value: 'Menm Jou', label: 'Randevou' },
@@ -560,20 +562,11 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'Sa Nou Fè',
-        titleLines: ['Kat Sèvis.', 'Yon Ekip Ou Ka Konte Sou Li.'],
+        titleLines: ['Twa Sèvis.', 'Yon Ekip Ou Ka Konte Sou Li.'],
         description:
-          'Soti nan retire fatra rive nan mete gazon fre ak livrezon menm jou, nou kouvri tout Palm Beach County.',
+          'Soti nan retire fatra rive nan mete gazon fre ak livrezon menm jou, nou kouvri tout soti Konte Broward rive nan Florida Keys.',
         cta: 'Mande Sèvis',
         items: [
-          {
-            title: 'Lwe',
-            subtitle: 'Ou bezwen yon kamyon oswa bwat pou pwojè ou a?',
-            description:
-              'Lwe ekipman nou yo ak bon pri, tan fleksib, epi san frè kache.',
-            bullets: ['Peryòd fleksib', 'Kamyon ak bwat disponib', 'Pa gen frè kache'],
-            accent: 'service-card rent',
-            icon: 'truck',
-          },
           {
             title: 'Retire Fatra',
             subtitle: 'Nou pote ale bagay ki lou yo.',
@@ -594,10 +587,10 @@ export const contentByLanguage = {
           },
           {
             title: 'Livrezon ak Ranmase Vit',
-            subtitle: 'Sèvis menm jou atravè Palm Beach County.',
+            subtitle: 'Sèvis menm jou soti Konte Broward rive nan Florida Keys.',
             description:
               'Nou livre epi ranmase materyèl, sak, ak atik rapidman ak pwofesyonalis.',
-            bullets: ['Disponib menm jou', 'Materyèl, sak ak atik', 'Tout Palm Beach County'],
+            bullets: ['Disponib menm jou', 'Materyèl, sak ak atik', 'Soti Broward rive nan Keys'],
             accent: 'service-card delivery',
             icon: 'delivery',
           },
@@ -606,11 +599,11 @@ export const contentByLanguage = {
       work: {
         tag: 'Travay Nou',
         title: 'Anvan ak Apre',
-        description: 'Travay reyèl, rezilta reyèl. Gade diferans AMG la an aksyon.',
+        description: 'Travay reyèl, rezilta reyèl. Gade diferans Proline la an aksyon.',
         cta: 'Jwenn Estimasyon Ou',
         items: [
-          { ...sharedWorkItems[0], title: 'Enstalasyon Gazon', location: 'Palm Beach County' },
-          { ...sharedWorkItems[1], title: 'Retire Fatra ak Debri', location: 'Palm Beach County' },
+          { ...sharedWorkItems[0], title: 'Enstalasyon Gazon', location: 'Sid Florid' },
+          { ...sharedWorkItems[1], title: 'Retire Fatra ak Debri', location: 'Sid Florid' },
         ],
       },
       steps: {
@@ -641,9 +634,9 @@ export const contentByLanguage = {
       },
       features: {
         tag: 'Poukisa Chwazi Nou',
-        title: 'Diferans AMG la',
+        title: 'Diferans Proline la',
         description:
-          'Nou retire fatra pi vit, pi pwòp, epi ak plis responsablite pase nenpòt lòt moun nan Palm Beach County.',
+          'Nou retire fatra pi vit, pi pwòp, epi ak plis responsablite pase nenpòt lòt moun nan Sid Florid.',
         truckPanel: {
           specsLabel: 'Espesifikasyon Gwo Kamyon',
           specs: [
@@ -684,26 +677,26 @@ export const contentByLanguage = {
       },
       areas: {
         tag: 'Zòn Sèvis',
-        title: 'N ap Sèvi Palm Beach County',
+        title: 'N ap Sèvi Soti Broward Rive nan Florida Keys',
         description:
-          'Nou ofri sèvis retire fatra pwofesyonèl nan tout Palm Beach County.\nPa wè vil ou? Rele nou — nou sèvi zòn ou tou.',
-        locationTitle: 'Palm Beach County',
-        locationSub: 'Florida, USA',
+          'Nou ofri sèvis retire fatra pwofesyonèl soti Konte Broward rive nan Florida Keys.\nPa wè vil ou? Rele nou — nou sèvi zòn ou tou.',
+        locationTitle: 'Sid Florid',
+        locationSub: 'Broward rive nan Keys',
         callout: 'Pa wè vil ou? Nou sèvi zòn ou tou.',
-        calloutCta: 'Rele (561) 762-0065',
+        calloutCta: 'Rele (305) 713-4647',
         items: sharedAreas,
       },
       faq: {
         tag: 'Kesyon',
         title: 'Kesyon Yo Poze Souvan',
         description: 'Ou gen yon kesyon ki pa sou lis la? Ekip nou an toujou pare pou ede.',
-        contactPhone: '(561) 762-0065',
+        contactPhone: '(305) 713-4647',
         contactForm: 'Fòm Kontak',
         items: [
           {
             question: 'Ki sèvis nou ofri?',
             answer:
-              'Nou bay sèvis retire fatra, enstalasyon gazon, lwe kamyon ak bwat, ak livrezon oswa ranmase rapid.',
+              'Nou bay sèvis retire fatra, enstalasyon gazon, livrezon oswa ranmase rapid, ak materyèl jaden tankou top soil, #57 rock, pea rock, sab ak mulch.',
           },
           {
             question: 'Konbyen retire fatra koute?',
@@ -720,7 +713,7 @@ export const contentByLanguage = {
           },
           {
             question: 'Ki zòn nou sèvi?',
-            answer: 'Nou sèvi pifò Palm Beach County epi nou kontan konfime si nou kouvri vil oswa katye ou a.',
+            answer: 'Nou sèvi pifò zòn soti Konte Broward rive nan Florida Keys epi nou kontan konfime si nou kouvri vil oswa katye ou a.',
           },
           {
             question: 'Kijan pri retire fatra a detèmine?',
@@ -732,7 +725,7 @@ export const contentByLanguage = {
         tag: 'Kontakte Nou',
         title: 'Pare Pou Kòmanse Jodi a?',
         description:
-          'Kontakte nou kounye a epi n ap pran swen rès la. Repons rapid, sèvis menm jou nan tout Palm Beach County.',
+          'Kontakte nou kounye a epi n ap pran swen rès la. Repons rapid, sèvis menm jou soti Konte Broward rive nan Florida Keys.',
         callUs: 'Rele Nou',
         textUs: 'Voye Teks',
         phoneLabel: 'TELEFÒN',
@@ -746,9 +739,9 @@ export const contentByLanguage = {
         waNamePlaceholder: 'Jan Duval',
         waService: 'Sèvis Ou Bezwen',
         waServicePlaceholder: 'Chwazi yon sèvis...',
-        waServices: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon Rapid', 'Lwe Kamyon ak Bwat'],
+        waServices: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon Rapid'],
         waCity: 'Vil / Zòn',
-        waCityPlaceholder: 'ex. West Palm Beach, Boca Raton...',
+        waCityPlaceholder: 'ex. Fort Lauderdale, Key West...',
         waDesc: 'Deskripsyon Kout',
         waDescPlaceholder: 'ex. Vye sofa, frijidè ak kèk bwat...',
         waSend: 'Voye via WhatsApp',
@@ -756,17 +749,17 @@ export const contentByLanguage = {
     },
     footer: {
       description:
-        'Retire fatra rapid ak ekolojik, enstalasyon gazon, ak livrezon menm jou atravè Palm Beach County.',
+        'Retire fatra rapid ak ekolojik, enstalasyon gazon, ak livrezon menm jou soti Broward rive nan Florida Keys.',
       servicesTitle: 'Sèvis',
       companyTitle: 'Konpayi',
-      services: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon ak Ranmase Vit', 'Lwe Kamyon ak Bwat'],
+      services: ['Retire Fatra', 'Enstalasyon Gazon', 'Livrezon ak Ranmase Vit'],
       company: ['Kijan Li Mache', 'Poukisa Chwazi Nou', 'Zòn Sèvis', 'Kesyon', 'Kontakte Nou'],
       ctaTitle: 'Pare Pou Kòmanse?',
       ctaDesc: 'Sèvis menm jou disponib. Rele oswa voye teks kounye a.',
       callUs: 'Rele Nou',
       whatsapp: 'WhatsApp',
       hours: 'Chak jou · 7 AM – 7 PM',
-      copyright: '\u00a9 2026 AMG Junk Removal LLC. Tout dwa rezève.',
+      copyright: '\u00a9 2026 Proline Hauling & Property Solutions. Tout dwa rezève.',
       privacy: 'Polis Konfidansyalite',
       terms: 'Tèm Sèvis',
     },

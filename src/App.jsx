@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import './styles/homepage.css'
 import PageHeader from './components/PageHeader'
-import heroTeam from './assets/team.jpg'
-import truckImg from './assets/truck-hero.jpg'
+import heroTeam from './assets/team.webp'
+import truckImg from './assets/truck-hero.webp'
 import SectionHeading from './components/SectionHeading'
 import WorkCompareCard from './components/WorkCompareCard'
 import PageFooter from './components/PageFooter'
@@ -58,6 +58,14 @@ const trustIcons = {
 
 const paymentIcons = { 'Credit Card': CreditCardIcon, 'Tarjeta de Credito': CreditCardIcon, 'Kat Kredi': CreditCardIcon, Zelle: ZelleIcon, Cash: CashIcon, Efectivo: CashIcon, Kash: CashIcon }
 
+function TrustBadgeIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth="1.6" aria-hidden="true" {...props}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  )
+}
+
 function ContactForm({ c }) {
   const [name, setName] = useState('')
   const [service, setService] = useState('')
@@ -67,7 +75,7 @@ function ContactForm({ c }) {
   const handleSend = (e) => {
     e.preventDefault()
     const msg = `Hi, I'd like to request a service.%0AName: ${encodeURIComponent(name)}%0AService: ${encodeURIComponent(service)}%0ACity: ${encodeURIComponent(city)}%0ADescription: ${encodeURIComponent(desc)}`
-    window.open(`https://wa.me/15617620065?text=${msg}`, '_blank')
+    window.open(`https://wa.me/13057134647?text=${msg}`, '_blank')
   }
 
   return (
@@ -125,11 +133,11 @@ function App() {
       return 'en'
     }
 
-    return window.localStorage.getItem('amg-language') ?? 'en'
+    return window.localStorage.getItem('proline-language') ?? 'en'
   })
 
   useEffect(() => {
-    window.localStorage.setItem('amg-language', languageCode)
+    window.localStorage.setItem('proline-language', languageCode)
     document.documentElement.lang = languageCode
   }, [languageCode])
 
@@ -147,7 +155,7 @@ function App() {
       <main>
         <section className="hero-dark">
           <div className="hero-visual">
-            <img src={heroTeam} alt="AMG Junk Removal crew" width="900" height="600" fetchpriority="high" />
+            <img src={heroTeam} alt="Proline Hauling & Property Solutions crew" width="900" height="600" fetchpriority="high" />
             <div className="hero-visual-fade" aria-hidden="true" />
 
             <div className="hero-badges">
@@ -171,25 +179,33 @@ function App() {
                 {hero.lines[0]}
                 <br />
                 <span className="hero-highlight">{hero.lines[1]}</span>
-                <br />
-                {hero.lines[2]}
+                {hero.lines[2] ? (
+                  <>
+                    <br />
+                    {hero.lines[2]}
+                  </>
+                ) : null}
               </h1>
+              {hero.trustLine ? <p className="hero-trustline">{hero.trustLine}</p> : null}
               <p>{hero.description}</p>
               <div className="hero-actions">
-                <a className="button-call" href="tel:+15617620065">
-                  <PhoneIcon /> (561) 762-0065
+                <a className="button-call" href="tel:+13057134647">
+                  <PhoneIcon /> (305) 713-4647
                 </a>
-                <a className="button-text" href="sms:+15617620065">
+                <a className="button-text" href="sms:+13057134647">
                   <ChatIcon /> {hero.callText}
                 </a>
               </div>
 
               <div className="hero-metrics">
-                {hero.stats.map((stat) => (
-                  <div className="metric-card" key={stat.label}>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </div>
+                {hero.stats.map((stat, index) => (
+                  <Fragment key={stat.label}>
+                    <div className="hero-stat">
+                      <span className="hero-stat-value">{stat.value}</span>
+                      <span className="hero-stat-label">{stat.label}</span>
+                    </div>
+                    {index < hero.stats.length - 1 ? <div className="hero-stat-divider" aria-hidden="true" /> : null}
+                  </Fragment>
                 ))}
               </div>
             </div>
@@ -288,19 +304,19 @@ function App() {
             </div>
           ) : null}
           <div className="steps-cta-row">
-            <a className="steps-cta-card steps-cta-primary" href="tel:+15617620065">
+            <a className="steps-cta-card steps-cta-primary" href="tel:+13057134647">
               <span className="steps-cta-icon"><PhoneIcon /></span>
               <span className="steps-cta-text">
                 <strong>{sections.contact.callUs}</strong>
-                <small>(561) 762-0065</small>
+                <small>(305) 713-4647</small>
               </span>
               <ArrowRightIcon />
             </a>
-            <a className="steps-cta-card steps-cta-secondary" href="sms:+15617620065">
+            <a className="steps-cta-card steps-cta-secondary" href="sms:+13057134647">
               <span className="steps-cta-icon"><ChatIcon /></span>
               <span className="steps-cta-text">
                 <strong>{sections.contact.textUs}</strong>
-                <small>(561) 762-0065</small>
+                <small>(305) 713-4647</small>
               </span>
               <ArrowRightIcon />
             </a>
@@ -334,7 +350,7 @@ function App() {
             <>
               <div className="truck-panel">
                 <div className="truck-panel-photo">
-                  <img src={truckImg} alt="AMG king-size truck" width="600" height="400" loading="lazy" />
+                  <img src={truckImg} alt="Proline king-size truck" width="600" height="400" loading="lazy" />
                 </div>
                 <div className="truck-panel-specs">
                   <span className="truck-specs-label">
@@ -352,7 +368,7 @@ function App() {
               </div>
               <div className="trust-badges">
                 {sections.features.truckPanel.trust.map((badge) => {
-                  const Icon = trustIcons[badge.icon]
+                  const Icon = badge.title === 'Neighborly Certified' ? TrustBadgeIcon : trustIcons[badge.icon]
                   return (
                     <div className="trust-badge" key={badge.title}>
                       <span className="trust-badge-icon">{Icon ? <Icon /> : null}</span>
@@ -377,12 +393,21 @@ function App() {
           <div className="areas-body">
             <div className="areas-location-card">
               <div className="areas-pin-graphic" aria-hidden="true">
-                <span className="areas-pin-ring areas-pin-ring-outer" />
-                <span className="areas-pin-ring areas-pin-ring-inner" />
-                <PinIcon width="28" height="28" />
+                <svg viewBox="0 0 80 80" fill="none" width="80" height="80" aria-hidden="true">
+                  <circle cx="40" cy="40" r="38" stroke="rgba(20,135,220,0.16)" strokeWidth="1.5" />
+                  <circle cx="40" cy="40" r="28" stroke="rgba(255,10,120,0.1)" strokeWidth="1.5" />
+                  <circle cx="40" cy="40" r="18" stroke="rgba(20,135,220,0.12)" strokeWidth="1.5" />
+                  <path
+                    d="M40 18C33.4 18 28 23.4 28 30c0 10.5 12 24 12 24s12-13.5 12-24c0-6.6-5.4-12-12-12z"
+                    fill="rgba(255,10,120,0.12)"
+                    stroke="#1487dc"
+                    strokeWidth="1.5"
+                  />
+                  <circle cx="40" cy="30" r="4" fill="#1487dc" />
+                </svg>
               </div>
-              <strong>{sections.areas.locationTitle}</strong>
-              <span>{sections.areas.locationSub}</span>
+              <p className="areas-location-title">{sections.areas.locationTitle}</p>
+              <p className="areas-location-sub">{sections.areas.locationSub}</p>
             </div>
             <div className="areas-right">
               <div className="areas-grid">
@@ -394,7 +419,7 @@ function App() {
               </div>
               <div className="areas-callout">
                 <span>{sections.areas.callout}</span>
-                <a className="button-call" href="tel:+15617620065">
+                <a className="button-call" href="tel:+13057134647">
                   <PhoneIcon /> {sections.areas.calloutCta}
                 </a>
               </div>
@@ -409,7 +434,7 @@ function App() {
               <h2>{sections.faq.title}</h2>
               <p>{sections.faq.description}</p>
               <div className="faq-contacts">
-                <a className="faq-contact-btn" href="tel:+15617620065">
+                <a className="faq-contact-btn" href="tel:+13057134647">
                   <PhoneIcon /> {sections.faq.contactPhone}
                 </a>
                 <a className="faq-contact-btn" href="#contact">
@@ -436,14 +461,14 @@ function App() {
                   <span className="contact-info-icon"><PhoneIcon /></span>
                   <div>
                     <span className="contact-info-label">{sections.contact.phoneLabel}</span>
-                    <a href="tel:+15617620065" className="contact-info-value">(561) 762-0065</a>
+                    <a href="tel:+13057134647" className="contact-info-value">(305) 713-4647</a>
                   </div>
                 </div>
                 <div className="contact-info-row">
                   <span className="contact-info-icon"><ChatIcon /></span>
                   <div>
                     <span className="contact-info-label">{sections.contact.textLabel}</span>
-                    <a href="sms:+15617620065" className="contact-info-value">(561) 762-0065</a>
+                    <a href="sms:+13057134647" className="contact-info-value">(305) 713-4647</a>
                   </div>
                 </div>
                 <div className="contact-info-row">

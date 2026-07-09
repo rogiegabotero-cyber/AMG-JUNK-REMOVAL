@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 import { PhoneIcon, FacebookIcon, InstagramIcon, TikTokIcon, WhatsAppIcon, ClockIcon } from './Icons'
 
 const companyNavHrefs = {
@@ -25,21 +25,21 @@ function PageFooter({ footerContent }) {
       <div className="footer-inner">
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src={logo} alt="AMG Junk Removal" />
+            <img src={logo} alt="Proline Hauling & Property Solutions" />
             <div className="footer-logo-text">
-              <strong>AMG Junk Removal</strong>
-              <small>LLC · PALM BEACH COUNTY</small>
+              <strong>Proline</strong>
+              <small>Hauling &amp; Property Solutions</small>
             </div>
           </div>
           <p>{footerContent.description}</p>
-          <a href="tel:+15617620065" className="footer-phone">
-            <PhoneIcon /> (561) 762-0065
+          <a href="tel:+13057134647" className="footer-phone">
+            <PhoneIcon /> (305) 713-4647
           </a>
           <div className="footer-socials">
             <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FacebookIcon /></a>
-            <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
+            <a href="https://www.instagram.com/prolinehaulingfl?igsh=MTRidXY0NWU2ZjE5dQ==" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><InstagramIcon /></a>
             <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><TikTokIcon /></a>
-            <a href="https://wa.me/15617620065" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
+            <a href="https://wa.me/13057134647" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><WhatsAppIcon /></a>
           </div>
         </div>
 
@@ -64,10 +64,10 @@ function PageFooter({ footerContent }) {
         <div className="footer-cta-col">
           <h4>{footerContent.ctaTitle}</h4>
           <p>{footerContent.ctaDesc}</p>
-          <a href="tel:+15617620065" className="footer-btn-call">
+          <a href="tel:+13057134647" className="footer-btn-call">
             <PhoneIcon /> {footerContent.callUs}
           </a>
-          <a href="https://wa.me/15617620065" className="footer-btn-wa" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/13057134647" className="footer-btn-wa" target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon /> {footerContent.whatsapp}
           </a>
           <span className="footer-hours">
