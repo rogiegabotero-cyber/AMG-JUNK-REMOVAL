@@ -20,6 +20,7 @@ const sharedAreas = [
   'Doral',
   'Kendall',
   'Homestead',
+  'Florida City',
   'Cutler Bay',
   'Pinecrest',
   'Palmetto Bay',
