@@ -5,9 +5,27 @@ export const languageOptions = [
 ]
 
 const sharedAreas = [
-  'Miami-Dade County',
-  'Broward County',
-  'Upper Keys',
+  'Fort Lauderdale',
+  'Hollywood',
+  'Pembroke Pines',
+  'Miramar',
+  'Coral Springs',
+  'Plantation',
+  'Davie',
+  'Pompano Beach',
+  'Weston',
+  'Miami',
+  'Hialeah',
+  'Miami Gardens',
+  'Doral',
+  'Kendall',
+  'Homestead',
+  'Cutler Bay',
+  'Pinecrest',
+  'Palmetto Bay',
+  'Key Largo',
+  'Tavernier',
+  'Islamorada',
 ]
 
 const sharedWorkItems = [
