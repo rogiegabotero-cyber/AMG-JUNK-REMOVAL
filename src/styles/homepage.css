@@ -11,7 +11,7 @@
   --border: #dde4f0;
   --shadow: 0 20px 45px rgba(7, 16, 25, 0.1);
   --radius: 24px;
-  --max-width: 1240px;
+  --max-width: 1400px;
 
   --hero-navy: #050507;
   --hero-navy-deep: #0d1020;
@@ -848,6 +848,9 @@ a {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: subgrid;
+  grid-auto-rows: auto;
+  align-items: stretch;
   gap: 1.25rem;
 }
 
@@ -857,12 +860,11 @@ a {
   border-radius: 22px;
   padding: 1.6rem 1.6rem 1.2rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-row: span 5;
   position: relative;
   overflow: visible;
-  min-height: 420px;
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 

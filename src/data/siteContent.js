@@ -100,7 +100,7 @@ export const contentByLanguage = {
             icon: 'sod',
           },
           {
-            title: 'Fast Delivery and Pickup',
+            title: 'Fast Delivery & Pickup',
             subtitle: 'Same-day service From Key Largo North to North Broward County Line .',
             description:
               'We deliver and pick up materials, bags, and items quickly and professionally.',
@@ -349,7 +349,7 @@ export const contentByLanguage = {
             icon: 'sod',
           },
           {
-            title: 'Entrega y Recogida Rapida',
+            title: 'Entrega & Recogida Rapida',
             subtitle: 'Servicio el mismo dia desde el Condado de Broward hasta los Cayos de Florida.',
             description:
               'Entregamos y recogemos materiales, bolsas y articulos de forma rapida y profesional.',
@@ -601,7 +601,7 @@ export const contentByLanguage = {
             icon: 'sod',
           },
           {
-            title: 'Livrezon ak Ranmase Vit',
+            title: 'Livrezon & Ranmase Vit',
             subtitle: 'Sèvis menm jou soti Konte Broward rive nan Florida Keys.',
             description:
               'Nou livre epi ranmase materyèl, sak, ak atik rapidman ak pwofesyonalis.',
