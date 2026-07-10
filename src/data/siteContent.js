@@ -5,21 +5,9 @@ export const languageOptions = [
 ]
 
 const sharedAreas = [
-  'Fort Lauderdale',
-  'Hollywood',
-  'Pembroke Pines',
-  'Miramar',
-  'Coral Springs',
-  'Plantation',
-  'Davie',
-  'Pompano Beach',
-  'Weston',
-  'Miami',
-  'Homestead',
-  'Key Largo',
-  'Islamorada',
-  'Marathon',
-  'Key West',
+  'Miami-Dade County',
+  'Broward County',
+  'Upper Keys',
 ]
 
 const sharedWorkItems = [
@@ -79,11 +67,20 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'What We Do',
-        titleLines: ['Three Services.', 'One Reliable Crew.'],
+        titleLines: ['Four Services.', 'One Reliable Crew.'],
         description:
           'From hauling junk to laying fresh sod and same-day deliveries, we cover it all from Broward County to the Florida Keys.',
         cta: 'Request Service',
         items: [
+          {
+            title: 'Rent',
+            subtitle: 'Need a dumpster for your project?',
+            description:
+              'Rent our equipment at competitive rates. Flexible durations, no hidden fees.',
+            bullets: ['Flexible rental periods', 'Dumpsters available', 'No hidden charges'],
+            accent: 'service-card rent',
+            icon: 'truck',
+          },
           {
             title: 'Junk Removal',
             subtitle: 'We haul away:',
@@ -152,7 +149,7 @@ export const contentByLanguage = {
         description:
           'We remove junk faster, cleaner, and more responsibly than anyone else in South Florida.',
         truckPanel: {
-          specsLabel: 'King-Size Truck Specs',
+          specsLabel: 'Large-Size Trailer Specs',
           specs: [
             { value: '15', unit: 'Cubic\u00a0Yards' },
             { value: '14 ft', unit: 'Length' },
@@ -183,19 +180,19 @@ export const contentByLanguage = {
             icon: 'dollar',
           },
           {
-            title: 'King-Size Trucks',
-            description: 'Our trucks are 20% bigger than the competition for fewer trips and faster jobs.',
+            title: 'Large-Size Trailers',
+            description: 'Large-size trailers for fewer trips and faster jobs.',
             icon: 'truck',
           },
         ],
       },
       areas: {
         tag: 'Service Area',
-        title: 'Serving Broward County to the Florida Keys',
+        title: 'Serving Miami-Dade, Broward & the Upper Keys',
         description:
-          'Proudly providing professional junk removal from Broward County to the Florida Keys.\nCan\'t find your city? Call us — we likely serve your area too.',
-        locationTitle: 'South Florida',
-        locationSub: 'Broward County to the Keys',
+          'Proudly serving Miami-Dade County, Broward County, and the Upper Keys. Can\'t find your city? Call us, we likely serve your area too.',
+        locationTitle: 'Miami-Dade, Broward & Upper Keys',
+        locationSub: 'South Florida',
         callout: "Don't see your city? We likely serve your area.",
         calloutCta: 'Call (305) 713-4647',
         items: sharedAreas,
@@ -319,11 +316,20 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'Lo Que Hacemos',
-        titleLines: ['Tres Servicios.', 'Un Equipo Confiable.'],
+        titleLines: ['Cuatro Servicios.', 'Un Equipo Confiable.'],
         description:
           'Desde retirar basura hasta instalar cesped fresco y entregas el mismo dia, cubrimos todo desde el Condado de Broward hasta los Cayos de Florida.',
         cta: 'Solicitar Servicio',
         items: [
+          {
+            title: 'Renta',
+            subtitle: 'Necesitas un contenedor para tu proyecto?',
+            description:
+              'Renta nuestro equipo a precios competitivos. Tiempos flexibles, sin cargos ocultos.',
+            bullets: ['Periodos flexibles', 'Contenedores disponibles', 'Sin cargos ocultos'],
+            accent: 'service-card rent',
+            icon: 'truck',
+          },
           {
             title: 'Remocion de Basura',
             subtitle: 'Nos llevamos lo pesado.',
@@ -395,7 +401,7 @@ export const contentByLanguage = {
         description:
           'Retiramos basura mas rapido, mas limpio y con mas responsabilidad que cualquier otro en el Sur de Florida.',
         truckPanel: {
-          specsLabel: 'Especificaciones del Camion',
+          specsLabel: 'Especificaciones del Remolque',
           specs: [
             { value: '15', unit: 'Yardas Cubicas' },
             { value: '14 ft', unit: 'Largo' },
@@ -426,19 +432,19 @@ export const contentByLanguage = {
             icon: 'dollar',
           },
           {
-            title: 'Camiones Mas Grandes',
-            description: 'Nuestros camiones son 20% mas grandes que los de la competencia para menos viajes y mas rapidez.',
+            title: 'Remolques de Gran Tamano',
+            description: 'Remolques de gran tamano para menos viajes y trabajos mas rapidos.',
             icon: 'truck',
           },
         ],
       },
       areas: {
         tag: 'Zona de Servicio',
-        title: 'Sirviendo Desde Broward Hasta los Cayos de Florida',
+        title: 'Sirviendo Miami-Dade, Broward y los Cayos del Norte',
         description:
-          'Ofrecemos remocion de basura profesional desde el Condado de Broward hasta los Cayos de Florida.\n¿No encuentras tu ciudad? Llamanos — probablemente servimos tu area.',
-        locationTitle: 'Sur de Florida',
-        locationSub: 'Broward hasta los Cayos',
+          'Servimos con orgullo el Condado Miami-Dade, el Condado Broward y los Cayos del Norte. ¿No encuentras tu ciudad? Llamanos — probablemente servimos tu area.',
+        locationTitle: 'Miami-Dade, Broward y Cayos del Norte',
+        locationSub: 'Sur de Florida',
         callout: '¿No ves tu ciudad? Es probable que sirvamos tu area.',
         calloutCta: 'Llamar (305) 713-4647',
         items: sharedAreas,
@@ -562,11 +568,20 @@ export const contentByLanguage = {
     sections: {
       services: {
         tag: 'Sa Nou Fè',
-        titleLines: ['Twa Sèvis.', 'Yon Ekip Ou Ka Konte Sou Li.'],
+        titleLines: ['Kat Sèvis.', 'Yon Ekip Ou Ka Konte Sou Li.'],
         description:
           'Soti nan retire fatra rive nan mete gazon fre ak livrezon menm jou, nou kouvri tout soti Konte Broward rive nan Florida Keys.',
         cta: 'Mande Sèvis',
         items: [
+          {
+            title: 'Lwe',
+            subtitle: 'Ou bezwen yon bwat pou pwojè ou a?',
+            description:
+              'Lwe ekipman nou yo ak bon pri. Tan fleksib, san frè kache.',
+            bullets: ['Peryòd fleksib', 'Bwat disponib', 'Pa gen frè kache'],
+            accent: 'service-card rent',
+            icon: 'truck',
+          },
           {
             title: 'Retire Fatra',
             subtitle: 'Nou pote ale bagay ki lou yo.',
@@ -638,7 +653,7 @@ export const contentByLanguage = {
         description:
           'Nou retire fatra pi vit, pi pwòp, epi ak plis responsablite pase nenpòt lòt moun nan Sid Florid.',
         truckPanel: {
-          specsLabel: 'Espesifikasyon Gwo Kamyon',
+          specsLabel: 'Espesifikasyon Gwo Remòk',
           specs: [
             { value: '15', unit: 'Yad Kib' },
             { value: '14 ft', unit: 'Longè' },
@@ -669,19 +684,19 @@ export const contentByLanguage = {
             icon: 'dollar',
           },
           {
-            title: 'Gwo Kamyon',
-            description: 'Kamyon nou yo 20% pi gwo pase konpetisyon an pou mwens vwayaj ak travay pi rapid.',
+            title: 'Gwo Remòk',
+            description: 'Gwo remòk pou mwens vwayaj ak travay pi rapid.',
             icon: 'truck',
           },
         ],
       },
       areas: {
         tag: 'Zòn Sèvis',
-        title: 'N ap Sèvi Soti Broward Rive nan Florida Keys',
+        title: 'N ap Sèvi Miami-Dade, Broward ak Anlè Keys yo',
         description:
-          'Nou ofri sèvis retire fatra pwofesyonèl soti Konte Broward rive nan Florida Keys.\nPa wè vil ou? Rele nou — nou sèvi zòn ou tou.',
-        locationTitle: 'Sid Florid',
-        locationSub: 'Broward rive nan Keys',
+          'Nou sèvi Konte Miami-Dade, Konte Broward ak Anlè Keys yo ak fyète. Pa wè vil ou? Rele nou — nou sèvi zòn ou tou.',
+        locationTitle: 'Miami-Dade, Broward ak Anlè Keys',
+        locationSub: 'Sid Florid',
         callout: 'Pa wè vil ou? Nou sèvi zòn ou tou.',
         calloutCta: 'Rele (305) 713-4647',
         items: sharedAreas,
