@@ -2493,10 +2493,42 @@ a {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy h1,
+.hero-trustline,
+.hero-copy > p:not(.hero-trustline),
+.hero-actions,
+.hero-metrics {
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-copy h1         { animation-delay: 0.1s; }
+.hero-trustline       { animation-delay: 0.25s; }
+.hero-copy > p:not(.hero-trustline) { animation-delay: 0.35s; }
+.hero-actions         { animation-delay: 0.5s; }
+.hero-metrics         { animation-delay: 0.65s; }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .hero-copy h1,
+  .hero-trustline,
+  .hero-copy > p:not(.hero-trustline),
+  .hero-actions,
+  .hero-metrics {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
 }
