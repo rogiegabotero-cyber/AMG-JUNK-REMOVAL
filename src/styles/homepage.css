@@ -2373,8 +2373,8 @@ a {
 
 @media (max-width: 1134px) {
   .topbar-inner {
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    margin: 0rem 1rem;
+    width: 90%;
   }
 
   .language-pill-label {
