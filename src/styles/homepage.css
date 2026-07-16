@@ -987,6 +987,10 @@ a {
   color: var(--hero-teal);
 }
 
+#work .section-header {
+  margin-bottom: 1.25rem;
+}
+
 #work .section-header h2 {
   color: #ffffff;
 }
@@ -997,15 +1001,15 @@ a {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 640px));
+  grid-template-columns: repeat(2, minmax(0, 380px));
   justify-content: center;
-  gap: 1.25rem;
+  gap: 3rem;
 }
 
 .work-cta {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .work-cta .button-call {
@@ -1025,7 +1029,7 @@ a {
 .compare {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   cursor: ew-resize;
   touch-action: none;
@@ -1117,7 +1121,7 @@ a {
 }
 
 .work-card-body {
-  padding: 1rem 1.25rem 1.2rem;
+  padding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1127,12 +1131,12 @@ a {
 .work-card-body h3 {
   margin: 0;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .work-card-body p {
   color: var(--hero-muted);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   margin: 0;
 }

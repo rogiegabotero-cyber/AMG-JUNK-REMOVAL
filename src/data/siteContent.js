@@ -1,3 +1,9 @@
+import workSodBefore from '../assets/work-sod-before.jpg'
+import workSodAfter from '../assets/work-sod-after.jpg'
+import workJunkBefore from '../assets/work-junk-before.jpg'
+import workJunkAfter from '../assets/work-junk-after.jpg'
+import placeholder from '../assets/placeholder.svg'
+
 export const languageOptions = [
   { code: 'en', label: 'English',         badge: 'US' },
   { code: 'es', label: 'Español',         badge: 'ES' },
@@ -34,14 +40,26 @@ const sharedWorkItems = [
   {
     title: 'Sod Installation',
     location: 'South Florida',
-    before: 'https://amgjunkremovalpalmbeach.com/work-sod-before.jpg',
-    after: 'https://amgjunkremovalpalmbeach.com/work-sod-after.jpg',
+    before: workSodBefore,
+    after: workSodAfter,
   },
   {
     title: 'Junk & Debris Removal',
     location: 'South Florida',
-    before: 'https://amgjunkremovalpalmbeach.com/work-junk-before.jpg',
-    after: 'https://amgjunkremovalpalmbeach.com/work-junk-after.jpg',
+    before: workJunkBefore,
+    after: workJunkAfter,
+  },
+  {
+    title: 'Top Soil & Rock',
+    location: 'South Florida',
+    before: placeholder,
+    after: placeholder,
+  },
+  {
+    title: 'Mulch & Sand',
+    location: 'South Florida',
+    before: placeholder,
+    after: placeholder,
   },
 ]
 
@@ -387,6 +405,8 @@ export const contentByLanguage = {
         items: [
           { ...sharedWorkItems[0], title: 'Instalacion de Cesped', location: 'Sur de Florida' },
           { ...sharedWorkItems[1], title: 'Remocion de Basura y Escombros', location: 'Sur de Florida' },
+          { ...sharedWorkItems[2], title: 'Tierra y Roca', location: 'Sur de Florida' },
+          { ...sharedWorkItems[3], title: 'Mulch y Arena', location: 'Sur de Florida' },
         ],
       },
       steps: {
@@ -639,6 +659,8 @@ export const contentByLanguage = {
         items: [
           { ...sharedWorkItems[0], title: 'Enstalasyon Gazon', location: 'Sid Florid' },
           { ...sharedWorkItems[1], title: 'Retire Fatra ak Debri', location: 'Sid Florid' },
+          { ...sharedWorkItems[2], title: 'Tè ak Wòch', location: 'Sid Florid' },
+          { ...sharedWorkItems[3], title: 'Mulch ak Sab', location: 'Sid Florid' },
         ],
       },
       steps: {
