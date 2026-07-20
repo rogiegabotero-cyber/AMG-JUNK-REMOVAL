@@ -3,13 +3,19 @@ import './styles/homepage.css'
 import PageHeader from './components/PageHeader'
 import homepageImg from './assets/homepage-img.webp'
 import heroLogoMark from './assets/logo.webp'
-import truckImg from './assets/truck-hero.webp'
+import truckImg from './assets/truck-hero.png'
 import sodMaterialImg from './assets/sod.webp'
 import topsoilMaterialImg from './assets/topsoil.webp'
-import rock57MaterialImg from './assets/57-rock.webp'
-import peaRockMaterialImg from './assets/pea-rock.webp'
-import sandMaterialImg from './assets/sand.webp'
+import rock57MaterialImg from './assets/57-rock.jpg'
+import peaRockMaterialImg from './assets/Pea gravel.jpeg'
+import sandMaterialImg from './assets/sand-after.png'
 import mulchMaterialImg from './assets/mulch.webp'
+import gravelMaterialImg from './assets/Gravel.jpeg'
+import bulkGardenSoilMaterialImg from './assets/Bulk garden soil.jpeg'
+import crushedStoneAggregateImg from './assets/Crushed stone aggregate.jpeg'
+import fineCrushedStoneAggregateImg from './assets/Fine crushed stone aggregate.jpeg'
+import silicaQuartzSandImg from './assets/Silica_Quartz sand.jpeg'
+import ligniteCoalImg from './assets/Lignite coal.jpg'
 import SectionHeading from './components/SectionHeading'
 import WorkCompareCard from './components/WorkCompareCard'
 import MaterialsTicker from './components/MaterialsTicker'
@@ -52,6 +58,12 @@ const materialImages = {
   'pea-rock': peaRockMaterialImg,
   sand: sandMaterialImg,
   mulch: mulchMaterialImg,
+  gravel: gravelMaterialImg,
+  'bulk-garden-soil': bulkGardenSoilMaterialImg,
+  'crushed-stone-aggregate': crushedStoneAggregateImg,
+  'fine-crushed-stone-aggregate': fineCrushedStoneAggregateImg,
+  'silica-quartz-sand': silicaQuartzSandImg,
+  'lignite-coal': ligniteCoalImg,
 }
 
 const serviceIcons = {
@@ -151,6 +163,7 @@ function App() {
 
     return window.localStorage.getItem('proline-language') ?? 'en'
   })
+  const [showMore, setShowMore] = useState(false)
 
   useEffect(() => {
     let observer
@@ -299,10 +312,34 @@ function App() {
             />
           </div>
           <div className="work-grid">
-            {sections.work.items.map((item) => (
-              <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
-            ))}
+            {sections.work.items.map((item, index) => {
+              if (index === sections.work.items.length - 1) return null
+              return <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
+            })}
           </div>
+
+          <button
+            type="button"
+            className={`work-more-toggle ${showMore ? 'open' : ''}`}
+            onClick={() => setShowMore((s) => !s)}
+            aria-expanded={showMore}
+            aria-controls="work-more-panel"
+            aria-label="Show more work"
+          >
+            <ChevronDownIcon />
+          </button>
+
+          <div id="work-more-panel" className={`work-more-panel ${showMore ? 'open' : ''}`}>
+            <div className="work-more-panel-inner">
+              <div className="work-grid">
+                {(() => {
+                  const item = sections.work.items[sections.work.items.length - 1]
+                  return <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
+                })()}
+              </div>
+            </div>
+          </div>
+
           <MaterialsTicker
             title={sections.work.materialsTitle}
             materials={sections.work.materials}

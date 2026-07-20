@@ -8,6 +8,8 @@ import rock57Before from '../assets/57-rock-before.webp'
 import rock57After from '../assets/57-rock-after.webp'
 import mulchBefore from '../assets/mulch-before.webp'
 import mulchAfter from '../assets/mulch-after.webp'
+import sandBefore from '../assets/sand-before.png'
+import sandAfter from '../assets/sand-after.png'
 import placeholder from '../assets/placeholder.svg'
 
 export const languageOptions = [
@@ -40,6 +42,19 @@ const sharedAreas = [
   'Kendall',
   'Cutler Bay',
   'Palmetto Bay',
+  'Key Largo, FL',
+  'Islamorada',
+  'Tavernier',
+  'Hollywood',
+  'Margate',
+  'Pembroke Pines',
+  'Weston',
+  'Parkland',
+  'Fort Lauderdale',
+  'Coral Springs',
+  'Coconut Creek',
+  'Davie',
+  'Sunrise',
 ]
 
 const sharedWorkItems = [
@@ -62,7 +77,7 @@ const sharedWorkItems = [
     after: topsoilAfter,
   },
   {
-    title: '57-rock',
+    title: '#57 rock',
     location: 'South Florida',
     before: rock57Before,
     after: rock57After,
@@ -75,6 +90,12 @@ const sharedWorkItems = [
   },
   {
     title: 'Sand',
+    location: 'South Florida',
+    before: sandBefore,
+    after: sandAfter,
+  },
+  {
+    title: 'More Projects',
     location: 'South Florida',
     before: placeholder,
     after: placeholder,
@@ -184,13 +205,13 @@ export const contentByLanguage = {
           },
           {
             key: '57-rock',
-            label: '57-rock',
+            label: '#57 rock',
             tag: 'Drainage & Driveways',
             description: 'Durable crushed rock for drainage and driveways.',
           },
           {
             key: 'pea-rock',
-            label: 'pea-rock',
+            label: 'Pea Gravel',
             tag: 'Decorative Accents',
             description: 'Smooth, rounded rock for beds and walkways.',
           },
@@ -205,6 +226,42 @@ export const contentByLanguage = {
             label: 'Mulch',
             tag: 'Bed Protection',
             description: 'Natural mulch to protect and beautify your beds.',
+          },
+          {
+            key: 'gravel',
+            label: 'Gravel',
+            tag: 'Drainage & Base',
+            description: 'Versatile gravel for drainage, base layers, and landscaping.',
+          },
+          {
+            key: 'bulk-garden-soil',
+            label: 'Bulk Garden Soil',
+            tag: 'By the Yard',
+            description: 'Rich garden soil delivered in bulk for planting beds and lawns.',
+          },
+          {
+            key: 'crushed-stone-aggregate',
+            label: 'Crushed Stone Aggregate',
+            tag: 'Driveway & Base',
+            description: 'Durable crushed stone ideal for driveways and base layers.',
+          },
+          {
+            key: 'fine-crushed-stone-aggregate',
+            label: 'Fine Crushed Stone Aggregate',
+            tag: 'Leveling & Bedding',
+            description: 'Fine crushed stone perfect for leveling and bedding projects.',
+          },
+          {
+            key: 'silica-quartz-sand',
+            label: 'Silica Quartz Sand',
+            tag: 'Premium Fill Sand',
+            description: 'High-quality silica quartz sand for construction and sports applications.',
+          },
+          {
+            key: 'lignite-coal',
+            label: 'Lignite Coal',
+            tag: 'Soil Amendment',
+            description: 'Natural lignite coal to improve soil structure and water retention.',
           },
         ],
       },
@@ -298,7 +355,7 @@ export const contentByLanguage = {
           {
             question: 'What services do you offer?',
             answer:
-              'We provide junk removal, sod installation, fast delivery and pickup, and landscape materials including top soil, #57 rock, pea rock, sand, and mulch.',
+              'We provide junk removal, fast delivery and pickup, and landscape materials including topsoil, #57 rock, pea rock, sand, sod, and mulch installation.',
           },
           {
             question: 'How much does junk removal cost?',
@@ -310,8 +367,8 @@ export const contentByLanguage = {
             answer: 'Yes. We often complete jobs the same day you call, depending on the scope and timing.',
           },
           {
-            question: 'How does sod installation work?',
-            answer: 'We supply, deliver, and professionally install fresh sod for residential and commercial properties.',
+            question: 'What material do we sell?',
+            answer: 'We sell soil, sot dirt, rock, and installation.',
           },
           {
             question: 'Which areas do you serve?',
@@ -459,6 +516,7 @@ export const contentByLanguage = {
           { ...sharedWorkItems[3], title: 'Roca', location: 'Sur de Florida' },
           { ...sharedWorkItems[4], title: 'Mulch', location: 'Sur de Florida' },
           { ...sharedWorkItems[5], title: 'Arena', location: 'Sur de Florida' },
+          { ...sharedWorkItems[6], title: 'Más Proyectos', location: 'Sur de Florida' },
         ],
         materials: [
           {
@@ -475,13 +533,13 @@ export const contentByLanguage = {
           },
           {
             key: '57-rock',
-            label: '57-rock',
+            label: '#57 rock',
             tag: 'Drenaje y Entradas',
             description: 'Roca triturada duradera para drenaje y entradas de auto.',
           },
           {
             key: 'pea-rock',
-            label: 'pea-rock',
+            label: 'Pea Gravel',
             tag: 'Acentos Decorativos',
             description: 'Roca lisa y redondeada para jardineras y caminos.',
           },
@@ -496,6 +554,42 @@ export const contentByLanguage = {
             label: 'Mulch',
             tag: 'Proteccion de Jardineras',
             description: 'Mulch natural para proteger y embellecer tus jardineras.',
+          },
+          {
+            key: 'gravel',
+            label: 'Gravel',
+            tag: 'Drenaje y Base',
+            description: 'Grava versatil para drenaje, bases y jardineria.',
+          },
+          {
+            key: 'bulk-garden-soil',
+            label: 'Bulk Garden Soil',
+            tag: 'Por Yarda',
+            description: 'Tierra rica para jardineras y cesped, entregada a granel.',
+          },
+          {
+            key: 'crushed-stone-aggregate',
+            label: 'Crushed Stone Aggregate',
+            tag: 'Entrada y Base',
+            description: 'Piedra triturada durable para entradas y capas base.',
+          },
+          {
+            key: 'fine-crushed-stone-aggregate',
+            label: 'Fine Crushed Stone Aggregate',
+            tag: 'Nivelacion y Lecho',
+            description: 'Piedra triturada fina para nivelacion y proyectos de lecho.',
+          },
+          {
+            key: 'silica-quartz-sand',
+            label: 'Silica Quartz Sand',
+            tag: 'Arena de Relleno Premium',
+            description: 'Arena de cuarzo de silice de alta calidad para construccion y deportes.',
+          },
+          {
+            key: 'lignite-coal',
+            label: 'Lignite Coal',
+            tag: 'Enmienda de Suelo',
+            description: 'Carbon lignito natural para mejorar la estructura del suelo y retencion de agua.',
           },
         ],
       },
@@ -750,6 +844,7 @@ export const contentByLanguage = {
           { ...sharedWorkItems[3], title: 'Wòch', location: 'Sid Florid' },
           { ...sharedWorkItems[4], title: 'Mulch', location: 'Sid Florid' },
           { ...sharedWorkItems[5], title: 'Sab', location: 'Sid Florid' },
+          { ...sharedWorkItems[6], title: 'Plis Pwojè', location: 'Sid Florid' },
         ],
         materials: [
           {
@@ -766,13 +861,13 @@ export const contentByLanguage = {
           },
           {
             key: '57-rock',
-            label: '57-rock',
+            label: '#57 rock',
             tag: 'Drenaj ak Antre Machin',
             description: 'Wòch kraze solid pou drenaj ak antre machin.',
           },
           {
             key: 'pea-rock',
-            label: 'pea-rock',
+            label: 'Pea Gravel',
             tag: 'Aksan Dekoratif',
             description: 'Wòch lis ak won pou jaden ak pasaj.',
           },
@@ -787,6 +882,42 @@ export const contentByLanguage = {
             label: 'Mulch',
             tag: 'Pwoteksyon Jaden',
             description: 'Mulch natirèl pou pwoteje ak anbeli jaden ou yo.',
+          },
+          {
+            key: 'gravel',
+            label: 'Gravel',
+            tag: 'Drenaj ak Baz',
+            description: 'Graze vèsatil pou drenaj, baz, ak peyazaj.',
+          },
+          {
+            key: 'bulk-garden-soil',
+            label: 'Bulk Garden Soil',
+            tag: 'Pa Yad',
+            description: 'Tè rich pou jaden ak gazon, livre an gwo.',
+          },
+          {
+            key: 'crushed-stone-aggregate',
+            label: 'Crushed Stone Aggregate',
+            tag: 'Antre Machin ak Baz',
+            description: 'Wòch kraze solid pou antre machin ak kouch baz.',
+          },
+          {
+            key: 'fine-crushed-stone-aggregate',
+            label: 'Fine Crushed Stone Aggregate',
+            tag: 'Nivlman ak Kouche',
+            description: 'Wòch kraze fin pou nivlman ak pwojè kouche.',
+          },
+          {
+            key: 'silica-quartz-sand',
+            label: 'Silica Quartz Sand',
+            tag: 'Sab Ranpli Premye',
+            description: 'Sab silika kwatz bon kalite pou konstriksyon ak espò.',
+          },
+          {
+            key: 'lignite-coal',
+            label: 'Lignite Coal',
+            tag: 'Amandman Tè',
+            description: 'Chabon linyit natirèl pou amelyore estrikti tè ak kenbe dlo.',
           },
         ],
       },

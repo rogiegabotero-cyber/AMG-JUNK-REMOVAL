@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { ArrowRightIcon, StarIcon } from './Icons'
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRightIcon, StarIcon, CloseIcon } from './Icons'
 
 // Rendered as several repeated copies so there's buffer content on both sides
 // of the visible window — sliding left needs copies ahead, sliding right needs
@@ -27,6 +27,18 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
   const transitionTimeoutRef = useRef(null)
   const rafRef = useRef(null)
   const lastTimeRef = useRef(null)
+
+  const [selected, setSelected] = useState(null)
+  const closeModal = () => setSelected(null)
+
+  useEffect(() => {
+    if (!selected) return
+    const handleKey = (e) => {
+      if (e.key === 'Escape') closeModal()
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [selected])
 
   const items = Array.from({ length: COPIES }, () => materials).flat()
 
@@ -153,7 +165,19 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
         <div className="materials-ticker-viewport">
           <div className="materials-ticker-track" ref={trackRef}>
             {items.map((material, index) => (
-              <div className="material-chip" key={`${material.key}-${index}`}>
+              <div
+                className="material-chip"
+                key={`${material.key}-${index}`}
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelected(material)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSelected(material)
+                  }
+                }}
+              >
                 <div className="material-chip-media">
                   {images[material.key] ? (
                     <img className="material-chip-image" src={images[material.key]} alt="" aria-hidden="true" />
@@ -168,11 +192,6 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
                   <h4 className="material-chip-title">{material.label}</h4>
                   {material.description ? (
                     <p className="material-chip-description">{material.description}</p>
-                  ) : null}
-                  {cta ? (
-                    <a className="material-chip-cta" href="#contact">
-                      {cta}
-                    </a>
                   ) : null}
                 </div>
               </div>
@@ -189,6 +208,53 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
           <ArrowRightIcon />
         </button>
       </div>
+
+      {selected ? (
+        <div
+          className="material-modal-overlay"
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.label}
+        >
+          <div
+            className="material-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="material-modal-close"
+              onClick={closeModal}
+              aria-label="Close"
+            >
+              <CloseIcon />
+            </button>
+
+            {images[selected.key] ? (
+              <img
+                className="material-modal-image"
+                src={images[selected.key]}
+                alt={selected.label}
+              />
+            ) : null}
+
+            <div className="material-modal-body">
+              {selected.tag ? (
+                <span className="material-modal-tag">{selected.tag}</span>
+              ) : null}
+              <h3 className="material-modal-title">{selected.label}</h3>
+              {selected.description ? (
+                <p className="material-modal-description">{selected.description}</p>
+              ) : null}
+              {cta ? (
+                <a className="material-modal-cta" href="#contact" onClick={closeModal}>
+                  {cta}
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }
