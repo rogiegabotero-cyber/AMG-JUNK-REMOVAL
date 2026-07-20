@@ -1,7 +1,13 @@
 import workSodBefore from '../assets/work-sod-before.jpg'
 import workSodAfter from '../assets/work-sod-after.jpg'
-import workJunkBefore from '../assets/work-junk-before.jpg'
-import workJunkAfter from '../assets/work-junk-after.jpg'
+import workJunkBefore from '../assets/work-junk-before.webp'
+import workJunkAfter from '../assets/work-junk-after.webp'
+import topsoilBefore from '../assets/topsoil-before.webp'
+import topsoilAfter from '../assets/topsoil-after.webp'
+import rock57Before from '../assets/57-rock-before.webp'
+import rock57After from '../assets/57-rock-after.webp'
+import mulchBefore from '../assets/mulch-before.webp'
+import mulchAfter from '../assets/mulch-after.webp'
 import placeholder from '../assets/placeholder.svg'
 
 export const languageOptions = [
@@ -50,13 +56,25 @@ const sharedWorkItems = [
     after: workJunkAfter,
   },
   {
-    title: 'Top Soil & Rock',
+    title: 'Top Soil',
     location: 'South Florida',
-    before: placeholder,
-    after: placeholder,
+    before: topsoilBefore,
+    after: topsoilAfter,
   },
   {
-    title: 'Mulch & Sand',
+    title: '57-rock',
+    location: 'South Florida',
+    before: rock57Before,
+    after: rock57After,
+  },
+  {
+    title: 'Mulch',
+    location: 'South Florida',
+    before: mulchBefore,
+    after: mulchAfter,
+  },
+  {
+    title: 'Sand',
     location: 'South Florida',
     before: placeholder,
     after: placeholder,
@@ -85,19 +103,15 @@ export const contentByLanguage = {
       menuNote: 'Free estimates. Same-day service.',
     },
     hero: {
-      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      eyebrow: 'Fast. Reliable.',
+      lines: ['Hauling &', 'Property Solutions', ''],
       trustLine: 'Trusted Across Broward County to the Florida Keys',
       description:
         'Junk removal, sod installation, top soil, #57 rock, pea rock, sand, mulch and more — with fast delivery & pickup across South Florida.',
       callText: 'Text Us',
-      stats: [
-        { value: 'Same Day', label: 'Appointments' },
-        { value: '60%', label: 'Recycled / Donated' },
-        { value: 'Free', label: 'Estimates' },
-      ],
       badges: [
         { icon: 'cart', label: 'Junk Removal' },
-        { icon: 'leaf', label: 'Sod Installation' },
+        { icon: 'leaf', label: 'Material Installation' },
         { icon: 'truck', label: 'Fast Delivery' },
         { icon: 'clock', label: 'Same-day Pickup' },
       ],
@@ -129,10 +143,10 @@ export const contentByLanguage = {
             icon: 'cart',
           },
           {
-            title: 'Sod Installer',
-            subtitle: 'Fresh lawn, delivered and installed.',
+            title: 'Material Installation',
+            subtitle: 'delivered and installed.',
             description:
-              'Transform your yard in a single day with residential and commercial sod installation.',
+              'Transform your yard in a single day with residential and commercial sod, top soil, #57 rock, pea rock, sand, mulch installation.',
             bullets: ['Residential and commercial', 'Same-day installation', 'Clean, professional finish'],
             accent: 'service-card sod',
             icon: 'sod',
@@ -149,11 +163,50 @@ export const contentByLanguage = {
         ],
       },
       work: {
-        tag: 'Our Work',
+        tag: 'Our Work and Materials',
         title: 'Before and After',
         description: 'Real jobs, real results. See the Proline difference in action.',
         cta: 'Get Your Estimate',
+        materialsTitle: 'Materials',
         items: sharedWorkItems,
+        materials: [
+          {
+            key: 'sod',
+            label: 'Sod',
+            tag: 'Same-Day Install',
+            description: 'Fresh-cut turf delivered and installed the same day.',
+          },
+          {
+            key: 'topsoil',
+            label: 'topsoil',
+            tag: 'Bulk or Bagged',
+            description: 'Nutrient-rich soil for healthy lawns and gardens.',
+          },
+          {
+            key: '57-rock',
+            label: '57-rock',
+            tag: 'Drainage & Driveways',
+            description: 'Durable crushed rock for drainage and driveways.',
+          },
+          {
+            key: 'pea-rock',
+            label: 'pea-rock',
+            tag: 'Decorative Accents',
+            description: 'Smooth, rounded rock for beds and walkways.',
+          },
+          {
+            key: 'sand',
+            label: 'Sand',
+            tag: 'Fill & Leveling',
+            description: 'Clean fill sand for leveling and construction.',
+          },
+          {
+            key: 'mulch',
+            label: 'Mulch',
+            tag: 'Bed Protection',
+            description: 'Natural mulch to protect and beautify your beds.',
+          },
+        ],
       },
       steps: {
         tag: 'Simple Process',
@@ -334,16 +387,12 @@ export const contentByLanguage = {
       menuNote: 'Estimados gratis. Servicio el mismo dia.',
     },
     hero: {
-      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      eyebrow: 'Rapido. Confiable.',
+      lines: ['Remocion y', 'Soluciones de Propiedad', ''],
       trustLine: 'De Confianza Desde el Condado de Broward Hasta los Cayos de Florida',
       description:
         'Remocion de basura, instalacion de cesped, top soil, #57 rock, pea rock, arena, mulch y mas — con entrega rapida y recogida en todo el Sur de Florida.',
       callText: 'Envianos Texto',
-      stats: [
-        { value: 'Mismo Dia', label: 'Citas' },
-        { value: '60%', label: 'Reciclado / Donado' },
-        { value: 'Gratis', label: 'Estimados' },
-      ],
       badges: [
         { icon: 'cart', label: 'Remocion de Basura' },
         { icon: 'leaf', label: 'Instalacion de Cesped' },
@@ -402,11 +451,52 @@ export const contentByLanguage = {
         title: 'Antes y Despues',
         description: 'Trabajos reales, resultados reales. Mira la diferencia Proline en accion.',
         cta: 'Obtenga Su Estimado',
+        materialsTitle: 'Materiales',
         items: [
           { ...sharedWorkItems[0], title: 'Instalacion de Cesped', location: 'Sur de Florida' },
           { ...sharedWorkItems[1], title: 'Remocion de Basura y Escombros', location: 'Sur de Florida' },
-          { ...sharedWorkItems[2], title: 'Tierra y Roca', location: 'Sur de Florida' },
-          { ...sharedWorkItems[3], title: 'Mulch y Arena', location: 'Sur de Florida' },
+          { ...sharedWorkItems[2], title: 'Top Soil', location: 'Sur de Florida' },
+          { ...sharedWorkItems[3], title: 'Roca', location: 'Sur de Florida' },
+          { ...sharedWorkItems[4], title: 'Mulch', location: 'Sur de Florida' },
+          { ...sharedWorkItems[5], title: 'Arena', location: 'Sur de Florida' },
+        ],
+        materials: [
+          {
+            key: 'sod',
+            label: 'Cesped',
+            tag: 'Instalacion el Mismo Dia',
+            description: 'Cesped recien cortado, entregado e instalado el mismo dia.',
+          },
+          {
+            key: 'topsoil',
+            label: 'topsoil',
+            tag: 'A Granel o en Bolsas',
+            description: 'Tierra rica en nutrientes para cesped y jardines saludables.',
+          },
+          {
+            key: '57-rock',
+            label: '57-rock',
+            tag: 'Drenaje y Entradas',
+            description: 'Roca triturada duradera para drenaje y entradas de auto.',
+          },
+          {
+            key: 'pea-rock',
+            label: 'pea-rock',
+            tag: 'Acentos Decorativos',
+            description: 'Roca lisa y redondeada para jardineras y caminos.',
+          },
+          {
+            key: 'sand',
+            label: 'Arena',
+            tag: 'Relleno y Nivelacion',
+            description: 'Arena limpia para relleno y nivelacion.',
+          },
+          {
+            key: 'mulch',
+            label: 'Mulch',
+            tag: 'Proteccion de Jardineras',
+            description: 'Mulch natural para proteger y embellecer tus jardineras.',
+          },
         ],
       },
       steps: {
@@ -588,16 +678,12 @@ export const contentByLanguage = {
       menuNote: 'Estimasyon gratis. Sevis menm jou.',
     },
     hero: {
-      lines: ['Proline Hauling &', 'Property Solutions', ''],
+      eyebrow: 'Rapid. Serye.',
+      lines: ['Retire Fatra ak', 'Solisyon Pwopriyete', ''],
       trustLine: 'Konfyans Soti nan Konte Broward Rive nan Florida Keys',
       description:
         'Retire fatra, enstalasyon gazon, top soil, #57 rock, pea rock, sab, mulch ak plis ankò — ak livrezon rapid ak ranmase nan tout Sid Florid.',
       callText: 'Voye Teks',
-      stats: [
-        { value: 'Menm Jou', label: 'Randevou' },
-        { value: '60%', label: 'Resikle / Bay' },
-        { value: 'Gratis', label: 'Estimasyon' },
-      ],
       badges: [
         { icon: 'cart', label: 'Retire Fatra' },
         { icon: 'leaf', label: 'Enstalasyon Gazon' },
@@ -656,11 +742,52 @@ export const contentByLanguage = {
         title: 'Anvan ak Apre',
         description: 'Travay reyèl, rezilta reyèl. Gade diferans Proline la an aksyon.',
         cta: 'Jwenn Estimasyon Ou',
+        materialsTitle: 'Materyèl',
         items: [
           { ...sharedWorkItems[0], title: 'Enstalasyon Gazon', location: 'Sid Florid' },
           { ...sharedWorkItems[1], title: 'Retire Fatra ak Debri', location: 'Sid Florid' },
-          { ...sharedWorkItems[2], title: 'Tè ak Wòch', location: 'Sid Florid' },
-          { ...sharedWorkItems[3], title: 'Mulch ak Sab', location: 'Sid Florid' },
+          { ...sharedWorkItems[2], title: 'Tè', location: 'Sid Florid' },
+          { ...sharedWorkItems[3], title: 'Wòch', location: 'Sid Florid' },
+          { ...sharedWorkItems[4], title: 'Mulch', location: 'Sid Florid' },
+          { ...sharedWorkItems[5], title: 'Sab', location: 'Sid Florid' },
+        ],
+        materials: [
+          {
+            key: 'sod',
+            label: 'Gazon',
+            tag: 'Enstalasyon Menm Jou',
+            description: 'Gazon fre koupe, livre epi enstale menm jou a.',
+          },
+          {
+            key: 'topsoil',
+            label: 'topsoil',
+            tag: 'An Gwo oswa nan Sak',
+            description: 'Tè rich an nitriman pou gazon ak jaden an sante.',
+          },
+          {
+            key: '57-rock',
+            label: '57-rock',
+            tag: 'Drenaj ak Antre Machin',
+            description: 'Wòch kraze solid pou drenaj ak antre machin.',
+          },
+          {
+            key: 'pea-rock',
+            label: 'pea-rock',
+            tag: 'Aksan Dekoratif',
+            description: 'Wòch lis ak won pou jaden ak pasaj.',
+          },
+          {
+            key: 'sand',
+            label: 'Sab',
+            tag: 'Ranpli ak Nivo',
+            description: 'Sab pwòp pou ranpli ak nivo.',
+          },
+          {
+            key: 'mulch',
+            label: 'Mulch',
+            tag: 'Pwoteksyon Jaden',
+            description: 'Mulch natirèl pou pwoteje ak anbeli jaden ou yo.',
+          },
         ],
       },
       steps: {

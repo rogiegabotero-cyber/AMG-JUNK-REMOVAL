@@ -1,10 +1,18 @@
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './styles/homepage.css'
 import PageHeader from './components/PageHeader'
-import heroTeam from './assets/team.webp'
+import homepageImg from './assets/homepage-img.webp'
+import heroLogoMark from './assets/logo.webp'
 import truckImg from './assets/truck-hero.webp'
+import sodMaterialImg from './assets/sod.webp'
+import topsoilMaterialImg from './assets/topsoil.webp'
+import rock57MaterialImg from './assets/57-rock.webp'
+import peaRockMaterialImg from './assets/pea-rock.webp'
+import sandMaterialImg from './assets/sand.webp'
+import mulchMaterialImg from './assets/mulch.webp'
 import SectionHeading from './components/SectionHeading'
 import WorkCompareCard from './components/WorkCompareCard'
+import MaterialsTicker from './components/MaterialsTicker'
 import PageFooter from './components/PageFooter'
 import {
   PhoneIcon,
@@ -30,11 +38,20 @@ import {
 } from './components/Icons'
 import { contentByLanguage } from './data/siteContent'
 
-const badgeIcons = {
+const heroBadgeIcons = {
   cart: CartIcon,
   leaf: SodIcon,
   truck: TruckIcon,
   clock: ClockIcon,
+}
+
+const materialImages = {
+  sod: sodMaterialImg,
+  topsoil: topsoilMaterialImg,
+  '57-rock': rock57MaterialImg,
+  'pea-rock': peaRockMaterialImg,
+  sand: sandMaterialImg,
+  mulch: mulchMaterialImg,
 }
 
 const serviceIcons = {
@@ -178,27 +195,14 @@ function App() {
 
       <main>
         <section className="hero-dark">
-          <div className="hero-visual">
-            <img src={heroTeam} alt="Proline Hauling & Property Solutions crew" width="900" height="600" fetchpriority="high" />
-            <div className="hero-visual-fade" aria-hidden="true" />
-
-            <div className="hero-badges">
-              {hero.badges.map((badge) => {
-                const Icon = badgeIcons[badge.icon]
-                return (
-                  <div className="hero-badge-card" key={badge.label}>
-                    <span className="hero-badge-icon">
-                      <Icon />
-                    </span>
-                    <span className="hero-badge-label">{badge.label}</span>
-                  </div>
-                )
-              })}
-            </div>
+          <div className="hero-backdrop" aria-hidden="true">
+            <img src={homepageImg} alt="" width="1680" height="1080" fetchpriority="high" />
+            <div className="hero-backdrop-fade" />
           </div>
 
           <div className="hero">
             <div className="hero-copy">
+              {hero.eyebrow ? <p className="hero-eyebrow">{hero.eyebrow}</p> : null}
               <h1>
                 {hero.lines[0]}
                 <br />
@@ -210,6 +214,7 @@ function App() {
                   </>
                 ) : null}
               </h1>
+              <span className="hero-rule" aria-hidden="true" />
               {hero.trustLine ? <p className="hero-trustline">{hero.trustLine}</p> : null}
               <p>{hero.description}</p>
               <div className="hero-actions">
@@ -220,17 +225,23 @@ function App() {
                   <ChatIcon /> {hero.callText}
                 </a>
               </div>
+            </div>
 
-              <div className="hero-metrics">
-                {hero.stats.map((stat, index) => (
-                  <Fragment key={stat.label}>
-                    <div className="hero-stat">
-                      <span className="hero-stat-value">{stat.value}</span>
-                      <span className="hero-stat-label">{stat.label}</span>
+            <div className="hero-logo-mark">
+              <img src={heroLogoMark} alt="Proline Hauling & Property Solutions" width="760" height="560" />
+
+              <div className="hero-badges">
+                {hero.badges.map((badge) => {
+                  const Icon = heroBadgeIcons[badge.icon]
+                  return (
+                    <div className="hero-badge-card" key={badge.label}>
+                      <span className="hero-badge-icon">
+                        <Icon />
+                      </span>
+                      <span className="hero-badge-label">{badge.label}</span>
                     </div>
-                    {index < hero.stats.length - 1 ? <div className="hero-stat-divider" aria-hidden="true" /> : null}
-                  </Fragment>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -292,6 +303,12 @@ function App() {
               <WorkCompareCard item={item} key={item.title} languageCode={languageCode} />
             ))}
           </div>
+          <MaterialsTicker
+            title={sections.work.materialsTitle}
+            materials={sections.work.materials}
+            images={materialImages}
+            cta={sections.work.cta}
+          />
           <div className="work-cta reveal">
             <a className="button-call" href="#contact">
               <PhoneIcon /> {sections.work.cta}
