@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { ArrowRightIcon, StarIcon, CloseIcon } from './Icons'
 
 // Rendered as several repeated copies so there's buffer content on both sides
@@ -141,75 +142,77 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
   )
 
   return (
-    <div className="materials-ticker-wrap reveal">
-      {title ? <h3 className="materials-ticker-title">{title}</h3> : null}
+    <>
+      <div className="materials-ticker-wrap reveal">
+        {title ? <h3 className="materials-ticker-title">{title}</h3> : null}
 
-      <div
-        className="materials-ticker"
-        onMouseEnter={() => {
-          pausedRef.current = true
-        }}
-        onMouseLeave={() => {
-          pausedRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        }}
-      >
-        <button
-          type="button"
-          className="materials-nav materials-nav-left"
-          onClick={() => step('left')}
-          aria-label="Slide materials left"
+        <div
+          className="materials-ticker"
+          onMouseEnter={() => {
+            pausedRef.current = true
+          }}
+          onMouseLeave={() => {
+            pausedRef.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          }}
         >
-          <ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
-        </button>
+          <button
+            type="button"
+            className="materials-nav materials-nav-left"
+            onClick={() => step('left')}
+            aria-label="Slide materials left"
+          >
+            <ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
+          </button>
 
-        <div className="materials-ticker-viewport">
-          <div className="materials-ticker-track" ref={trackRef}>
-            {items.map((material, index) => (
-              <div
-                className="material-chip"
-                key={`${material.key}-${index}`}
-                role="button"
-                tabIndex={0}
-                onClick={() => setSelected(material)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    setSelected(material)
-                  }
-                }}
-              >
-                <div className="material-chip-media">
-                  {images[material.key] ? (
-                    <img className="material-chip-image" src={images[material.key]} alt="" aria-hidden="true" />
-                  ) : null}
-                  {material.tag ? (
-                    <span className="material-chip-tag">
-                      <StarIcon /> {material.tag}
-                    </span>
-                  ) : null}
+          <div className="materials-ticker-viewport">
+            <div className="materials-ticker-track" ref={trackRef}>
+              {items.map((material, index) => (
+                <div
+                  className="material-chip"
+                  key={`${material.key}-${index}`}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setSelected(material)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelected(material)
+                    }
+                  }}
+                >
+                  <div className="material-chip-media">
+                    {images[material.key] ? (
+                      <img className="material-chip-image" src={images[material.key]} alt="" aria-hidden="true" />
+                    ) : null}
+                    {material.tag ? (
+                      <span className="material-chip-tag">
+                        <StarIcon /> {material.tag}
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="material-chip-body">
+                    <h4 className="material-chip-title">{material.label}</h4>
+                    {material.description ? (
+                      <p className="material-chip-description">{material.description}</p>
+                    ) : null}
+                  </div>
                 </div>
-                <div className="material-chip-body">
-                  <h4 className="material-chip-title">{material.label}</h4>
-                  {material.description ? (
-                    <p className="material-chip-description">{material.description}</p>
-                  ) : null}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <button
-          type="button"
-          className="materials-nav materials-nav-right"
-          onClick={() => step('right')}
-          aria-label="Slide materials right"
-        >
-          <ArrowRightIcon />
-        </button>
+          <button
+            type="button"
+            className="materials-nav materials-nav-right"
+            onClick={() => step('right')}
+            aria-label="Slide materials right"
+          >
+            <ArrowRightIcon />
+          </button>
+        </div>
       </div>
 
-      {selected ? (
+      {selected ? createPortal(
         <div
           className="material-modal-overlay"
           onClick={closeModal}
@@ -253,9 +256,10 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
               ) : null}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       ) : null}
-    </div>
+    </>
   )
 }
 
