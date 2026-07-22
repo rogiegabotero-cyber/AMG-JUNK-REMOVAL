@@ -12,11 +12,8 @@ import peaRockMaterialImg from './assets/Pea gravel.jpeg'
 import sandMaterialImg from './assets/sand.webp'
 import mulchMaterialImg from './assets/mulch.webp'
 import gravelMaterialImg from './assets/Gravel.jpeg'
-import bulkGardenSoilMaterialImg from './assets/Bulk garden soil.jpeg'
-import crushedStoneAggregateImg from './assets/Crushed stone aggregate.jpeg'
 import fineCrushedStoneAggregateImg from './assets/Fine crushed stone aggregate.jpeg'
 import silicaQuartzSandImg from './assets/Silica_Quartz sand.jpeg'
-import ligniteCoalImg from './assets/Lignite coal.jpg'
 import SectionHeading from './components/SectionHeading'
 import WorkCompareCard from './components/WorkCompareCard'
 import MaterialsTicker from './components/MaterialsTicker'
@@ -60,11 +57,8 @@ const materialImages = {
   sand: sandMaterialImg,
   mulch: mulchMaterialImg,
   gravel: gravelMaterialImg,
-  'bulk-garden-soil': bulkGardenSoilMaterialImg,
-  'crushed-stone-aggregate': crushedStoneAggregateImg,
   'fine-crushed-stone-aggregate': fineCrushedStoneAggregateImg,
   'silica-quartz-sand': silicaQuartzSandImg,
-  'lignite-coal': ligniteCoalImg,
 }
 
 const serviceIcons = {

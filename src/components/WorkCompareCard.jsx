@@ -94,8 +94,12 @@ function WorkCompareCard({ item, languageCode = 'en' }) {
         />
 
         <span className="compare-title">{item.title}</span>
-        <span className="compare-label compare-label-before">{labels.before}</span>
-        <span className="compare-label compare-label-after">{labels.after}</span>
+        <span className="compare-label compare-label-before" style={{ opacity: position < 22 ? 0 : 1 }}>
+          {labels.before}
+        </span>
+        <span className="compare-label compare-label-after" style={{ opacity: position > 78 ? 0 : 1 }}>
+          {labels.after}
+        </span>
 
         <div className="compare-divider" style={{ left: `${position}%` }}>
           <button

@@ -10,6 +10,8 @@ import mulchBefore from '../assets/mulch-before.webp'
 import mulchAfter from '../assets/mulch-after.webp'
 import sandBefore from '../assets/sand-before.png'
 import sandAfter from '../assets/sand-after.png'
+import peaRockBefore from '../assets/pearock garden soil.webp'
+import peaRockAfter from '../assets/pearock garden.webp'
 import placeholder from '../assets/placeholder.svg'
 
 export const languageOptions = [
@@ -95,10 +97,10 @@ const sharedWorkItems = [
     after: sandAfter,
   },
   {
-    title: 'More Projects',
+    title: 'Pea Rock',
     location: 'South Florida',
-    before: placeholder,
-    after: placeholder,
+    before: peaRockBefore,
+    after: peaRockAfter,
   },
 ]
 
@@ -234,34 +236,16 @@ export const contentByLanguage = {
             description: 'Versatile gravel for drainage, base layers, and landscaping.',
           },
           {
-            key: 'bulk-garden-soil',
-            label: 'Bulk Garden Soil',
-            tag: 'By the Yard',
-            description: 'Rich garden soil delivered in bulk for planting beds and lawns.',
-          },
-          {
-            key: 'crushed-stone-aggregate',
-            label: 'Crushed Stone Aggregate',
-            tag: 'Driveway & Base',
-            description: 'Durable crushed stone ideal for driveways and base layers.',
-          },
-          {
             key: 'fine-crushed-stone-aggregate',
-            label: 'Fine Crushed Stone Aggregate',
+            label: 'Crushed Stone Aggregate',
             tag: 'Leveling & Bedding',
-            description: 'Fine crushed stone perfect for leveling and bedding projects.',
+            description: 'Fine crushed stone perfect for leveling and bedding projects.'
           },
           {
             key: 'silica-quartz-sand',
             label: 'Silica Quartz Sand',
             tag: 'Premium Fill Sand',
             description: 'High-quality silica quartz sand for construction and sports applications.',
-          },
-          {
-            key: 'lignite-coal',
-            label: 'Lignite Coal',
-            tag: 'Soil Amendment',
-            description: 'Natural lignite coal to improve soil structure and water retention.',
           },
         ],
       },
@@ -516,7 +500,7 @@ export const contentByLanguage = {
           { ...sharedWorkItems[3], title: 'Roca', location: 'Sur de Florida' },
           { ...sharedWorkItems[4], title: 'Mulch', location: 'Sur de Florida' },
           { ...sharedWorkItems[5], title: 'Arena', location: 'Sur de Florida' },
-          { ...sharedWorkItems[6], title: 'Más Proyectos', location: 'Sur de Florida' },
+          { ...sharedWorkItems[6], title: 'Grava de Guisante', location: 'Sur de Florida' },
         ],
         materials: [
           {
@@ -562,34 +546,16 @@ export const contentByLanguage = {
             description: 'Grava versatil para drenaje, bases y jardineria.',
           },
           {
-            key: 'bulk-garden-soil',
-            label: 'Bulk Garden Soil',
-            tag: 'Por Yarda',
-            description: 'Tierra rica para jardineras y cesped, entregada a granel.',
-          },
-          {
-            key: 'crushed-stone-aggregate',
-            label: 'Crushed Stone Aggregate',
-            tag: 'Entrada y Base',
-            description: 'Piedra triturada durable para entradas y capas base.',
-          },
-          {
             key: 'fine-crushed-stone-aggregate',
-            label: 'Fine Crushed Stone Aggregate',
+            label: 'Crushed Stone Aggregate',
             tag: 'Nivelacion y Lecho',
-            description: 'Piedra triturada fina para nivelacion y proyectos de lecho.',
+            description: 'Piedra triturada fina para nivelacion y proyectos de lecho.'
           },
           {
             key: 'silica-quartz-sand',
             label: 'Silica Quartz Sand',
             tag: 'Arena de Relleno Premium',
             description: 'Arena de cuarzo de silice de alta calidad para construccion y deportes.',
-          },
-          {
-            key: 'lignite-coal',
-            label: 'Lignite Coal',
-            tag: 'Enmienda de Suelo',
-            description: 'Carbon lignito natural para mejorar la estructura del suelo y retencion de agua.',
           },
         ],
       },
@@ -844,7 +810,7 @@ export const contentByLanguage = {
           { ...sharedWorkItems[3], title: 'Wòch', location: 'Sid Florid' },
           { ...sharedWorkItems[4], title: 'Mulch', location: 'Sid Florid' },
           { ...sharedWorkItems[5], title: 'Sab', location: 'Sid Florid' },
-          { ...sharedWorkItems[6], title: 'Plis Pwojè', location: 'Sid Florid' },
+          { ...sharedWorkItems[6], title: 'Wòch Pwa', location: 'Sid Florid' },
         ],
         materials: [
           {
@@ -890,34 +856,16 @@ export const contentByLanguage = {
             description: 'Graze vèsatil pou drenaj, baz, ak peyazaj.',
           },
           {
-            key: 'bulk-garden-soil',
-            label: 'Bulk Garden Soil',
-            tag: 'Pa Yad',
-            description: 'Tè rich pou jaden ak gazon, livre an gwo.',
-          },
-          {
-            key: 'crushed-stone-aggregate',
-            label: 'Crushed Stone Aggregate',
-            tag: 'Antre Machin ak Baz',
-            description: 'Wòch kraze solid pou antre machin ak kouch baz.',
-          },
-          {
             key: 'fine-crushed-stone-aggregate',
-            label: 'Fine Crushed Stone Aggregate',
+            label: 'Crushed Stone Aggregate',
             tag: 'Nivlman ak Kouche',
-            description: 'Wòch kraze fin pou nivlman ak pwojè kouche.',
+            description: 'Wòch kraze fin pou nivlman ak pwojè kouche.'
           },
           {
             key: 'silica-quartz-sand',
             label: 'Silica Quartz Sand',
             tag: 'Sab Ranpli Premye',
             description: 'Sab silika kwatz bon kalite pou konstriksyon ak espò.',
-          },
-          {
-            key: 'lignite-coal',
-            label: 'Lignite Coal',
-            tag: 'Amandman Tè',
-            description: 'Chabon linyit natirèl pou amelyore estrikti tè ak kenbe dlo.',
           },
         ],
       },
