@@ -200,10 +200,10 @@ export const contentByLanguage = {
             description: 'Fresh-cut turf delivered and installed the same day.',
           },
           {
-            key: 'topsoil',
-            label: 'topsoil',
-            tag: 'Bulk or Bagged',
-            description: 'Nutrient-rich soil for healthy lawns and gardens.',
+            key: 'bulk-garden-soil',
+            label: 'Topsoil',
+            tag: 'By the Yard',
+            description: 'Rich garden soil delivered in bulk for planting beds and lawns.',
           },
           {
             key: '57-rock',
@@ -510,10 +510,10 @@ export const contentByLanguage = {
             description: 'Cesped recien cortado, entregado e instalado el mismo dia.',
           },
           {
-            key: 'topsoil',
-            label: 'topsoil',
-            tag: 'A Granel o en Bolsas',
-            description: 'Tierra rica en nutrientes para cesped y jardines saludables.',
+            key: 'bulk-garden-soil',
+            label: 'Topsoil',
+            tag: 'Por Yarda',
+            description: 'Tierra rica para jardineras y cesped, entregada a granel.',
           },
           {
             key: '57-rock',
@@ -820,10 +820,10 @@ export const contentByLanguage = {
             description: 'Gazon fre koupe, livre epi enstale menm jou a.',
           },
           {
-            key: 'topsoil',
-            label: 'topsoil',
-            tag: 'An Gwo oswa nan Sak',
-            description: 'Tè rich an nitriman pou gazon ak jaden an sante.',
+            key: 'bulk-garden-soil',
+            label: 'Topsoil',
+            tag: 'Pa Yad',
+            description: 'Tè rich pou jaden ak gazon, livre an gwo.',
           },
           {
             key: '57-rock',

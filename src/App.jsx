@@ -6,10 +6,10 @@ import homepageImg from './assets/homepage-img.webp'
 import heroLogoMark from './assets/logo.webp'
 import truckImg from './assets/truck-hero.webp'
 import sodMaterialImg from './assets/sod.webp'
-import topsoilMaterialImg from './assets/topsoil.webp'
+import bulkGardenSoilMaterialImg from './assets/Bulk garden soil.jpeg'
 import rock57MaterialImg from './assets/57-rock.jpg'
 import peaRockMaterialImg from './assets/Pea gravel.jpeg'
-import sandMaterialImg from './assets/sand.webp'
+import sandMaterialImg from './assets/Sandss.webp'
 import mulchMaterialImg from './assets/mulch.webp'
 import gravelMaterialImg from './assets/Gravel.jpeg'
 import fineCrushedStoneAggregateImg from './assets/Fine crushed stone aggregate.jpeg'
@@ -51,7 +51,7 @@ const heroBadgeIcons = {
 
 const materialImages = {
   sod: sodMaterialImg,
-  topsoil: topsoilMaterialImg,
+  'bulk-garden-soil': bulkGardenSoilMaterialImg,
   '57-rock': rock57MaterialImg,
   'pea-rock': peaRockMaterialImg,
   sand: sandMaterialImg,
