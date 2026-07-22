@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import './styles/homepage.css'
+import { useAutoUpdate } from './hooks/useAutoUpdate'
 import PageHeader from './components/PageHeader'
 import homepageImg from './assets/homepage-img.webp'
 import heroLogoMark from './assets/logo.webp'
-import truckImg from './assets/truck-hero.png'
+import truckImg from './assets/truck-hero.webp'
 import sodMaterialImg from './assets/sod.webp'
 import topsoilMaterialImg from './assets/topsoil.webp'
 import rock57MaterialImg from './assets/57-rock.jpg'
 import peaRockMaterialImg from './assets/Pea gravel.jpeg'
-import sandMaterialImg from './assets/sand-after.png'
+import sandMaterialImg from './assets/sand.webp'
 import mulchMaterialImg from './assets/mulch.webp'
 import gravelMaterialImg from './assets/Gravel.jpeg'
 import bulkGardenSoilMaterialImg from './assets/Bulk garden soil.jpeg'
@@ -156,6 +157,8 @@ function FaqItem({ question, answer, open, onToggle }) {
 }
 
 function App() {
+  useAutoUpdate()
+
   const [languageCode, setLanguageCode] = useState(() => {
     if (typeof window === 'undefined') {
       return 'en'

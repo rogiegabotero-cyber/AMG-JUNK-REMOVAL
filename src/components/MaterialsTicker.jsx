@@ -158,7 +158,7 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
           <button
             type="button"
             className="materials-nav materials-nav-left"
-            onClick={() => step('left')}
+            onClick={() => step('right')}
             aria-label="Slide materials left"
           >
             <ArrowRightIcon style={{ transform: 'scaleX(-1)' }} />
@@ -204,7 +204,7 @@ function MaterialsTicker({ title, materials, images = {}, cta }) {
           <button
             type="button"
             className="materials-nav materials-nav-right"
-            onClick={() => step('right')}
+            onClick={() => step('left')}
             aria-label="Slide materials right"
           >
             <ArrowRightIcon />
